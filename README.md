@@ -2,6 +2,12 @@
 
 This test app consists of users and their albums and To-Do lists.
 
+## Considerations
+
+- The app should be adaptable to different devices (iPhones and iPads)
+- The code should be Unit Tested.
+- A good practice of Model-View-Controllers and Delegates is encouraged.
+
 ## Main screen
 
 The first screen to show is a table of users, fetched from the “/users” resource of [JSONPlaceholder](https://jsonplaceholder.typicode.com).
@@ -9,13 +15,13 @@ The first screen to show is a table of users, fetched from the “/users” reso
 ![Main screen](screens/Main@1x.png)
 
 ### Points of value:
-- Save all fetched data to Core Data.
+- After fetching all users from API, save them to Core Data.
 - Pull to refresh the table.
 - Search a Map location or place and filter users within the same units of lat/long. //TODO: example
 
 ## User screen
 
-This screen shows the details of an user, a map of its address, a table of his albums (fetched from the “/albums” resource of [JSONPlaceholder](https://jsonplaceholder.typicode.com)), and a button to see his To-Do list.
+This screen shows the details of an user, a map pin of its address, a table of his albums (fetched from the “/albums” resource of [JSONPlaceholder](https://jsonplaceholder.typicode.com)), and a button to see his To-Do list.
 
 ![User screen](screens/User@1x.png)
 
@@ -23,7 +29,7 @@ This screen shows the details of an user, a map of its address, a table of his a
 
 This screen shows a collection view of an album's photos', fetched from the “/photos” resource of [JSONPlaceholder](https://jsonplaceholder.typicode.com).
 
-![Album pics screen](screens/Album pics@1x.png)
+![Album pics screen](screens/Album%20pics@1x.png)
 
 ## To-Do screen
 
