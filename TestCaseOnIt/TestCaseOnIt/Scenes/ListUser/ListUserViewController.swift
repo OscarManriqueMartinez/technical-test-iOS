@@ -27,6 +27,7 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
   
+  var refreshControl: UIRefreshControl!
   var displayedUsers: [UserListViewModel.DisplayedUser] = []
   
   
@@ -47,6 +48,10 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
     self.title = NSLocalizedString("listUser.title", comment: "")
     self.searchBar?.placeholder = NSLocalizedString("listUser.search.placeholder", comment: "")
     
+    refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(ListUserViewController.refresh(_:)), for: UIControlEvents.valueChanged)
+    tableView.addSubview(refreshControl)
+    
     loadUserOnLoad()
   }
   
@@ -58,6 +63,11 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
     output.loadUser()
   }
   
+  func refresh(_ sender:AnyObject) {
+    // Code to refresh table view
+    loadUserOnLoad()
+  }
+  
   
   // MARK: - Display logic
   
@@ -65,6 +75,7 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   {
     displayedUsers = viewModel.displayedUsers
     tableView.reloadData()
+    refreshControl.endRefreshing()
   }
   
   
