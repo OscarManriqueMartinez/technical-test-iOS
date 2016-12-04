@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.2.0)
+  - JSONJoy-Swift (3.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - JSONJoy-Swift
+
+SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  JSONJoy-Swift: 103a44ba04f2219112d01dcaab5754a081d7c07f
+
+PODFILE CHECKSUM: 3a5b2956f67544e7f48bbb7818c97a924420f512
+
+COCOAPODS: 1.1.1
