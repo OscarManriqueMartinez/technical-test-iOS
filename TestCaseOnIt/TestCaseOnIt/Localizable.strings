@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  TestCaseOnIt
+
+  Created by Oscar Manrique Martinez on 4/12/16.
+  Copyright © 2016 Oscar. All rights reserved.
+*/
+
+listUser.title = "Mad Music";
+listUser.search.placeholder = "search";
