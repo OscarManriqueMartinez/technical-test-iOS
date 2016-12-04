@@ -12,26 +12,40 @@ import UIKit
 protocol ListUserViewControllerInput
 {
   func displayListUser(viewModel: UserListViewModel)
+  func displayListUserFilter(viewModel: UserListViewModel)
   func displayError(description: String)
 }
 
 protocol ListUserViewControllerOutput
 {
   func loadUser()
+  func searchUser(text: String)
 }
 
-class ListUserViewController: UIViewController, ListUserViewControllerInput, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource
+class ListUserViewController: UIViewController, ListUserViewControllerInput, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource
 {
   var output: ListUserViewControllerOutput!
   var router: ListUserRouter!
   
-  @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var errorLabel: UILabel!
+  let searchController = UISearchController(searchResultsController: nil)
   
   var refreshControl: UIRefreshControl!
   var displayedUsers: [UserListViewModel.DisplayedUser] = []
+  var filteredUsers: [UserListViewModel.DisplayedUser] = []
   
+  func filterContentForSearchText(searchText: String) {
+    filteredUsers = displayedUsers.filter { user in
+      return user.name.lowercased().contains(searchText.lowercased()) || user.email.lowercased().contains(searchText.lowercased()) || user.website.lowercased().contains(searchText.lowercased())
+    }
+  }
+
+  // MARK: - UISearchResultsUpdating
+  
+  func updateSearchResults(for searchController: UISearchController) {
+    output.searchUser(text: searchController.searchBar.text!)
+  }
   
   // MARK: - Object lifecycle
   
@@ -48,13 +62,21 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   {
     super.viewDidLoad()
     self.title = NSLocalizedString("listUser.title", comment: "")
-    self.searchBar?.placeholder = NSLocalizedString("listUser.search.placeholder", comment: "")
+    
+    configView()
+    loadUserOnLoad()
+  }
+  
+  func configView(){
     
     refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(ListUserViewController.refresh(_:)), for: UIControlEvents.valueChanged)
     tableView.addSubview(refreshControl)
     
-    loadUserOnLoad()
+    searchController.searchResultsUpdater = self
+    searchController.dimsBackgroundDuringPresentation = false
+    definesPresentationContext = true
+    tableView.tableHeaderView = searchController.searchBar
   }
   
   
@@ -81,6 +103,12 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
     refreshControl.endRefreshing()
   }
   
+  func displayListUserFilter(viewModel: UserListViewModel)
+  {
+    filteredUsers = viewModel.displayedUsers
+    tableView.reloadData()
+  }
+  
   func displayError(description: String){
     
     self.errorLabel.isHidden = false
@@ -91,14 +119,26 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   // MARK: - Table view data source
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    if searchController.isActive && searchController.searchBar.text != "" {
+      return filteredUsers.count
+    }
+    
     return displayedUsers.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "listUserCell") as! ListUserCell
     
-    let displayedUser = displayedUsers[(indexPath as NSIndexPath).row]
-    cell.configCell(displayedUser.name, email: displayedUser.email, webside: displayedUser.webside)
+    var displayedUser: UserListViewModel.DisplayedUser
+    
+    if searchController.isActive && searchController.searchBar.text != "" {
+      displayedUser = filteredUsers[(indexPath as NSIndexPath).row]
+    }else{
+      displayedUser = displayedUsers[(indexPath as NSIndexPath).row]
+    }
+    
+    cell.configCell(displayedUser.name, email: displayedUser.email, website: displayedUser.website)
     return cell
   }
 

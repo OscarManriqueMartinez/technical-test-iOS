@@ -21,22 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="d1c-Ir-Z1f">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="TGd-Ng-GIT"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dMp-v8-m7Q"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2kR-qN-EfG">
-                                <rect key="frame" x="0.0" y="108" width="320" height="372"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="listUserCell" editingAccessoryType="detailDisclosureButton" rowHeight="70" id="HBr-sB-SlJ" customClass="ListUserCell" customModule="TestCaseOnIt" customModuleProvider="target">
@@ -81,7 +67,7 @@
                                         <connections>
                                             <outlet property="emailLabel" destination="jsb-Xb-ebA" id="cpF-qc-OSD"/>
                                             <outlet property="nameLabel" destination="Z5D-Je-NoC" id="YlQ-J8-VaH"/>
-                                            <outlet property="websideLabel" destination="u7d-pq-BXS" id="2T0-dc-Qut"/>
+                                            <outlet property="websiteLabel" destination="u7d-pq-BXS" id="2T0-dc-Qut"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,7 +77,7 @@
                                 </connections>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqK-op-mAm">
-                                <rect key="frame" x="20" y="229" width="280" height="21"/>
+                                <rect key="frame" x="20" y="229.5" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -99,29 +85,32 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="d1c-Ir-Z1f" secondAttribute="trailing" id="45P-w6-9a2"/>
-                            <constraint firstItem="d1c-Ir-Z1f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Aud-AN-ee1"/>
                             <constraint firstAttribute="trailing" secondItem="2kR-qN-EfG" secondAttribute="trailing" id="KNC-Mg-o1z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2kR-qN-EfG" secondAttribute="bottom" id="Kh2-Tk-1QW"/>
                             <constraint firstItem="2kR-qN-EfG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LMh-rd-dN8"/>
                             <constraint firstItem="bqK-op-mAm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="TUw-7t-les"/>
-                            <constraint firstItem="d1c-Ir-Z1f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uq8-82-VOM"/>
                             <constraint firstItem="bqK-op-mAm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YmI-lt-bVt"/>
+                            <constraint firstItem="2kR-qN-EfG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Z5V-pt-hDg"/>
                             <constraint firstItem="bqK-op-mAm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bnN-NM-KxE"/>
-                            <constraint firstItem="2kR-qN-EfG" firstAttribute="top" secondItem="d1c-Ir-Z1f" secondAttribute="bottom" id="gwa-yE-i3l"/>
                             <constraint firstAttribute="trailing" secondItem="bqK-op-mAm" secondAttribute="trailing" constant="20" id="llX-kY-LE2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="17W-El-kdk"/>
                     <connections>
                         <outlet property="errorLabel" destination="bqK-op-mAm" id="QhZ-Bt-ntf"/>
-                        <outlet property="searchBar" destination="d1c-Ir-Z1f" id="zn0-2u-JJZ"/>
+                        <outlet property="searchDisplayController" destination="JJY-cu-9JG" id="5QU-Ch-V3c"/>
                         <outlet property="tableView" destination="2kR-qN-EfG" id="JhM-H5-I3L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="WOo-rF-oeE"/>
-                <searchDisplayController id="2rj-bE-PNV"/>
+                <searchDisplayController id="JJY-cu-9JG">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Ds7-kQ-GET"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="Lkd-iB-xQY"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="nPJ-LK-rCG"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="g04-C4-sYe"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1134.375" y="138.75"/>
         </scene>

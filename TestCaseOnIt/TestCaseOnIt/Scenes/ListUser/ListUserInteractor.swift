@@ -12,6 +12,8 @@ import UIKit
 protocol ListUserInteractorInput
 {
   func loadUser()
+  func searchUser(text: String)
+
 }
 
 protocol ListUserInteractorOutput
@@ -24,7 +26,7 @@ class ListUserInteractor: ListUserInteractorInput
 {
   var output: ListUserInteractorOutput!
   var worker: ListUserWorker!
-  var users: [User]?
+  var users = [User] ()
   
   // MARK: - Business logic
   
@@ -36,7 +38,7 @@ class ListUserInteractor: ListUserInteractorInput
     worker.getUser({ (users) in
       
       self.users = users
-      let response = UserListResponse(users:users)
+      let response = UserListResponse(users:users, isFilter:false)
       self.output.presentListUser(response: response)
       
     }, failure: {(error) in
@@ -44,4 +46,16 @@ class ListUserInteractor: ListUserInteractorInput
       
     })
   }
+  
+  func searchUser(text: String){
+    var filteredUsers: [User] = []
+    
+    filteredUsers = users.filter { user in
+      return user.name.lowercased().contains(text.lowercased()) || user.email.lowercased().contains(text.lowercased()) || user.website.lowercased().contains(text.lowercased())
+    }
+    
+    let response = UserListResponse(users:filteredUsers, isFilter:true)
+    self.output.presentListUser(response: response)
+  }
+
 }

@@ -18,6 +18,7 @@ protocol ListUserPresenterInput
 protocol ListUserPresenterOutput: class
 {
   func displayListUser(viewModel: UserListViewModel)
+  func displayListUserFilter(viewModel: UserListViewModel)
   func displayError(description: String)
 }
 
@@ -34,16 +35,22 @@ class ListUserPresenter: ListUserPresenterInput
     
     for user in response.users {
       
-      let displayedUser = UserListViewModel.DisplayedUser(name: user.name, email: user.email, webside: user.website)
+      let displayedUser = UserListViewModel.DisplayedUser(name: user.name, email: user.email, website: user.website)
       displayedUsers.append(displayedUser)
     }
     
     let viewModel = UserListViewModel(displayedUsers: displayedUsers)
-    output.displayListUser(viewModel: viewModel)
+    if response.isFilter {
+      output.displayListUserFilter(viewModel: viewModel)
+      
+    }else{
+      output.displayListUser(viewModel: viewModel)
+    }
   }
   
   func presentError(response: Error){
     
     output.displayError(description: response.localizedDescription)
   }
+  
 }

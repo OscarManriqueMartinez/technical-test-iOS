@@ -11,7 +11,7 @@ import UIKit
 class ListUserCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var websideLabel: UILabel!
+    @IBOutlet weak var websiteLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
     
@@ -20,11 +20,11 @@ class ListUserCell: UITableViewCell {
         // Initialization code
     }
     
-    open func configCell(_ name: String, email : String, webside : String) {
+    open func configCell(_ name: String, email : String, website : String) {
         
         nameLabel?.text = name
         emailLabel?.text = email
-        websideLabel?.text = webside
+        websiteLabel?.text = website
         
     }
 }

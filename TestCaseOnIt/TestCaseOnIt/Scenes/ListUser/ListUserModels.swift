@@ -13,6 +13,7 @@ import UIKit
 struct UserListResponse
 {
   var users: [User]
+  var isFilter: Bool
 }
 
 struct UserListViewModel
@@ -21,7 +22,7 @@ struct UserListViewModel
   {
     var name: String
     var email: String
-    var webside: String
+    var website: String
   }
   var displayedUsers: [DisplayedUser]
 }
