@@ -36,8 +36,9 @@ class ListUserWorker
               let user = try User(JSONDecoder(chatDecode))
               users.append(user)
               print(user)
+              
             } catch {
-              print("unable to parse the JSON")
+              failure(NSError(domain: "JSONJoy", code: 1002, userInfo: [NSLocalizedDescriptionKey: "unable to parse the JSON"]) as Error)
             }
           }
           success(users)

@@ -17,6 +17,7 @@ protocol ListUserInteractorInput
 protocol ListUserInteractorOutput
 {
   func presentListUser(response: UserListResponse)
+  func presentError(response: Error)
 }
 
 class ListUserInteractor: ListUserInteractorInput
@@ -39,6 +40,7 @@ class ListUserInteractor: ListUserInteractorInput
       self.output.presentListUser(response: response)
       
     }, failure: {(error) in
+      self.output.presentError(response: error)
       
     })
   }

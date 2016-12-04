@@ -12,11 +12,13 @@ import UIKit
 protocol ListUserPresenterInput
 {
   func presentListUser(response: UserListResponse)
+  func presentError(response: Error)
 }
 
 protocol ListUserPresenterOutput: class
 {
   func displayListUser(viewModel: UserListViewModel)
+  func displayError(description: String)
 }
 
 class ListUserPresenter: ListUserPresenterInput
@@ -38,5 +40,10 @@ class ListUserPresenter: ListUserPresenterInput
     
     let viewModel = UserListViewModel(displayedUsers: displayedUsers)
     output.displayListUser(viewModel: viewModel)
+  }
+  
+  func presentError(response: Error){
+    
+    output.displayError(description: response.localizedDescription)
   }
 }

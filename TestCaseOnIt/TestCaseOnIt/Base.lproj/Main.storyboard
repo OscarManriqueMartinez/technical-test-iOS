@@ -90,6 +90,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="pIl-rk-aoH"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqK-op-mAm">
+                                <rect key="frame" x="20" y="229" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -98,12 +104,17 @@
                             <constraint firstAttribute="trailing" secondItem="2kR-qN-EfG" secondAttribute="trailing" id="KNC-Mg-o1z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2kR-qN-EfG" secondAttribute="bottom" id="Kh2-Tk-1QW"/>
                             <constraint firstItem="2kR-qN-EfG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LMh-rd-dN8"/>
+                            <constraint firstItem="bqK-op-mAm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="TUw-7t-les"/>
                             <constraint firstItem="d1c-Ir-Z1f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uq8-82-VOM"/>
+                            <constraint firstItem="bqK-op-mAm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YmI-lt-bVt"/>
+                            <constraint firstItem="bqK-op-mAm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bnN-NM-KxE"/>
                             <constraint firstItem="2kR-qN-EfG" firstAttribute="top" secondItem="d1c-Ir-Z1f" secondAttribute="bottom" id="gwa-yE-i3l"/>
+                            <constraint firstAttribute="trailing" secondItem="bqK-op-mAm" secondAttribute="trailing" constant="20" id="llX-kY-LE2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="17W-El-kdk"/>
                     <connections>
+                        <outlet property="errorLabel" destination="bqK-op-mAm" id="QhZ-Bt-ntf"/>
                         <outlet property="searchBar" destination="d1c-Ir-Z1f" id="zn0-2u-JJZ"/>
                         <outlet property="tableView" destination="2kR-qN-EfG" id="JhM-H5-I3L"/>
                     </connections>

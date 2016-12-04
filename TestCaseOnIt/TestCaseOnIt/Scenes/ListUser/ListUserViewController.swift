@@ -12,6 +12,7 @@ import UIKit
 protocol ListUserViewControllerInput
 {
   func displayListUser(viewModel: UserListViewModel)
+  func displayError(description: String)
 }
 
 protocol ListUserViewControllerOutput
@@ -26,6 +27,7 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var errorLabel: UILabel!
   
   var refreshControl: UIRefreshControl!
   var displayedUsers: [UserListViewModel.DisplayedUser] = []
@@ -75,7 +77,14 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   {
     displayedUsers = viewModel.displayedUsers
     tableView.reloadData()
+    self.errorLabel.isHidden = true
     refreshControl.endRefreshing()
+  }
+  
+  func displayError(description: String){
+    
+    self.errorLabel.isHidden = false
+    self.errorLabel?.text = description
   }
   
   
