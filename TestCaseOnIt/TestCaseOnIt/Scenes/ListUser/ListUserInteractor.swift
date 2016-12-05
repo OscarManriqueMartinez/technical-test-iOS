@@ -13,7 +13,8 @@ protocol ListUserInteractorInput
 {
   func loadUser()
   func searchUser(text: String)
-
+  var users: [User] { get }
+  var filteredUsers: [User] { get }
 }
 
 protocol ListUserInteractorOutput
@@ -27,6 +28,7 @@ class ListUserInteractor: ListUserInteractorInput
   var output: ListUserInteractorOutput!
   var worker: ListUserWorker!
   var users = [User] ()
+  var filteredUsers: [User] = []
   
   // MARK: - Business logic
   
@@ -48,7 +50,6 @@ class ListUserInteractor: ListUserInteractorInput
   }
   
   func searchUser(text: String){
-    var filteredUsers: [User] = []
     
     filteredUsers = users.filter { user in
       return user.name.lowercased().contains(text.lowercased()) || user.email.lowercased().contains(text.lowercased()) || user.website.lowercased().contains(text.lowercased())

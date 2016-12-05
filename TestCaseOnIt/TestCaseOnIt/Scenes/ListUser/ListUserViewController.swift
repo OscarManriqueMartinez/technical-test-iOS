@@ -20,6 +20,8 @@ protocol ListUserViewControllerOutput
 {
   func loadUser()
   func searchUser(text: String)
+  var users: [User] { get }
+  var filteredUsers: [User] { get }
 }
 
 class ListUserViewController: UIViewController, ListUserViewControllerInput, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource
@@ -142,4 +144,22 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
     return cell
   }
 
+  
+  // MARK: - Table view delegate
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    tableView.deselectRow(at: indexPath, animated: true)
+    
+    var user: User
+    
+    if searchController.isActive && searchController.searchBar.text != "" {
+      user = self.output.filteredUsers[(indexPath as NSIndexPath).row]
+    }else{
+      user = self.output.users[(indexPath as NSIndexPath).row]
+    }
+    
+    self.performSegue(withIdentifier: "toDoSegue", sender: user)
+  }
+  
 }
