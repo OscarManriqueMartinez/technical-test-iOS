@@ -1,5 +1,5 @@
 //
-//  ListUserConfigurator.swift
+//  ToDoConfigurator.swift
 //  TestCaseOnIt
 //
 //  Created by Oscar Manrique Martinez on 4/12/16.
@@ -11,41 +11,41 @@ import UIKit
 
 // MARK: - Connect View, Interactor, and Presenter
 
-extension ListUserViewController: ListUserPresenterOutput
+extension ToDoViewController: ToDoPresenterOutput
 {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
-    router.passDataToNextScene(segue, sender: sender)
+    router.passDataToNextScene(segue: segue)
   }
 }
 
-extension ListUserInteractor: ListUserViewControllerOutput
+extension ToDoInteractor: ToDoViewControllerOutput
 {
 }
 
-extension ListUserPresenter: ListUserInteractorOutput
+extension ToDoPresenter: ToDoInteractorOutput
 {
 }
 
-class ListUserConfigurator
+class ToDoConfigurator
 {
   // MARK: - Object lifecycle
   
-  static let sharedInstance = ListUserConfigurator()
+  static let sharedInstance = ToDoConfigurator()
   
   private init() {}
   
   // MARK: - Configuration
   
-  func configure(viewController: ListUserViewController)
+  func configure(viewController: ToDoViewController)
   {
-    let router = ListUserRouter()
+    let router = ToDoRouter()
     router.viewController = viewController
     
-    let presenter = ListUserPresenter()
+    let presenter = ToDoPresenter()
     presenter.output = viewController
     
-    let interactor = ListUserInteractor()
+    let interactor = ToDoInteractor()
     interactor.output = presenter
     
     viewController.output = interactor

@@ -20,6 +20,8 @@ protocol ListUserViewControllerOutput
 {
   func loadUser()
   func searchUser(text: String)
+  var users: [User] { get }
+  var filteredUsers: [User] { get }
 }
 
 class ListUserViewController: UIViewController, ListUserViewControllerInput, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource
@@ -34,18 +36,7 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   var refreshControl: UIRefreshControl!
   var displayedUsers: [UserListViewModel.DisplayedUser] = []
   var filteredUsers: [UserListViewModel.DisplayedUser] = []
-  
-  func filterContentForSearchText(searchText: String) {
-    filteredUsers = displayedUsers.filter { user in
-      return user.name.lowercased().contains(searchText.lowercased()) || user.email.lowercased().contains(searchText.lowercased()) || user.website.lowercased().contains(searchText.lowercased())
-    }
-  }
 
-  // MARK: - UISearchResultsUpdating
-  
-  func updateSearchResults(for searchController: UISearchController) {
-    output.searchUser(text: searchController.searchBar.text!)
-  }
   
   // MARK: - Object lifecycle
   
@@ -61,13 +52,14 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    self.title = NSLocalizedString("listUser.title", comment: "")
     
     configView()
     loadUserOnLoad()
   }
   
   func configView(){
+
+    self.title = NSLocalizedString("listUser.title", comment: "")
     
     refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(ListUserViewController.refresh(_:)), for: UIControlEvents.valueChanged)
@@ -79,6 +71,12 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
     tableView.tableHeaderView = searchController.searchBar
   }
   
+  
+  // MARK: - UISearchResultsUpdating
+  
+  func updateSearchResults(for searchController: UISearchController) {
+    output.searchUser(text: searchController.searchBar.text!)
+  }
   
   // MARK: - Event handling
   
@@ -142,4 +140,22 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
     return cell
   }
 
+  
+  // MARK: - Table view delegate
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    tableView.deselectRow(at: indexPath, animated: true)
+    
+    var user: User
+    
+    if searchController.isActive && searchController.searchBar.text != "" {
+      user = self.output.filteredUsers[(indexPath as NSIndexPath).row]
+    }else{
+      user = self.output.users[(indexPath as NSIndexPath).row]
+    }
+    
+    self.performSegue(withIdentifier: "toDoSegue", sender: user)
+  }
+  
 }
