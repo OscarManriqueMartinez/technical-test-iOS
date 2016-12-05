@@ -52,13 +52,14 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    self.title = NSLocalizedString("listUser.title", comment: "")
     
     configView()
     loadUserOnLoad()
   }
   
   func configView(){
+
+    self.title = NSLocalizedString("listUser.title", comment: "")
     
     refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(ListUserViewController.refresh(_:)), for: UIControlEvents.valueChanged)

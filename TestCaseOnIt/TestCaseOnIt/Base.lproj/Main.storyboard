@@ -145,7 +145,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTL-gB-1UC">
-                                                    <rect key="frame" x="15" y="3" width="285" height="37.5"/>
+                                                    <rect key="frame" x="15" y="10" width="285" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -153,8 +153,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GTL-gB-1UC" firstAttribute="leading" secondItem="4Qh-GU-cpf" secondAttribute="leading" constant="15" id="1ia-FZ-p7s"/>
-                                                <constraint firstItem="GTL-gB-1UC" firstAttribute="top" secondItem="4Qh-GU-cpf" secondAttribute="top" constant="3" id="3Sv-j1-X2D"/>
-                                                <constraint firstAttribute="bottom" secondItem="GTL-gB-1UC" secondAttribute="bottom" constant="3" id="Mcs-X9-biw"/>
+                                                <constraint firstItem="GTL-gB-1UC" firstAttribute="top" secondItem="4Qh-GU-cpf" secondAttribute="top" constant="10" id="3Sv-j1-X2D"/>
+                                                <constraint firstAttribute="bottom" secondItem="GTL-gB-1UC" secondAttribute="bottom" constant="10" id="Mcs-X9-biw"/>
                                                 <constraint firstAttribute="trailing" secondItem="GTL-gB-1UC" secondAttribute="trailing" constant="20" id="kLG-zl-jb6"/>
                                             </constraints>
                                         </tableViewCellContentView>

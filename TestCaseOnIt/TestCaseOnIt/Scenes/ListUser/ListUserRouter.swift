@@ -39,6 +39,10 @@ class ListUserRouter: ListUserRouterInput
     if let selectedUser : User = sender as! User? {
       let toDoViewController = segue.destination as! ToDoViewController
       toDoViewController.output.user = selectedUser
+      
+      let backItem = UIBarButtonItem()
+      backItem.title = selectedUser.name
+      viewController.navigationItem.backBarButtonItem = backItem
     }
   }
 }

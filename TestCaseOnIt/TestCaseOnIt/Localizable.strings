@@ -8,5 +8,7 @@
 
 listUser.title = "Mad Music";
 listUser.search.placeholder = "search";
+
+todos.title = "ToDos";
 todos.segmente.pending = "Pending";
 todos.segmente.completed = "Completed";

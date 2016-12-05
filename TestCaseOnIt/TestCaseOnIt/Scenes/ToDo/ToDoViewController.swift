@@ -52,12 +52,21 @@ class ToDoViewController: UIViewController, ToDoViewControllerInput, UITableView
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
+//    self.navigationController?.navigationBar.backItem?.title = "Anything Else"
     configView()
     loadToDosOnLoad()
   }
   
   func configView(){
     
+    self.title = NSLocalizedString("todos.title", comment: "")
+    
+    self.tableView.estimatedRowHeight = 40.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    
+    segmentedControl.tintColor = UIColor().mainColor()
     segmentedControl.setTitle(NSLocalizedString("todos.segmente.pending", comment: ""), forSegmentAt: 0)
     segmentedControl.setTitle(NSLocalizedString("todos.segmente.completed", comment: ""), forSegmentAt: 0)
     segmentedControl.addTarget(self, action: #selector(ToDoViewController.action), for: .valueChanged)
