@@ -134,7 +134,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IQ4-ak-rpg">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="372"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="toDoCell" id="Nfz-0O-7yi" customClass="ToDoCell" customModule="TestCaseOnIt" customModuleProvider="target">
@@ -168,21 +168,32 @@
                                     <outlet property="delegate" destination="pzv-UH-I3I" id="ue5-zZ-gz1"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="CzU-Iq-3NX">
+                                <rect key="frame" x="15" y="72" width="290" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IQ4-ak-rpg" firstAttribute="leading" secondItem="GMh-qv-AHc" secondAttribute="leading" id="2yQ-Tu-MoN"/>
                             <constraint firstItem="2qx-XZ-bYJ" firstAttribute="leading" secondItem="GMh-qv-AHc" secondAttribute="leading" constant="20" id="CIm-Is-SnK"/>
                             <constraint firstItem="DDK-Br-dsr" firstAttribute="top" secondItem="IQ4-ak-rpg" secondAttribute="bottom" id="Mny-IG-hrh"/>
-                            <constraint firstItem="IQ4-ak-rpg" firstAttribute="top" secondItem="GMh-qv-AHc" secondAttribute="top" constant="64" id="QsV-Fb-S6q"/>
+                            <constraint firstAttribute="trailing" secondItem="CzU-Iq-3NX" secondAttribute="trailing" constant="15" id="UO4-iU-2oo"/>
                             <constraint firstAttribute="trailing" secondItem="2qx-XZ-bYJ" secondAttribute="trailing" constant="20" id="Us1-To-3uG"/>
+                            <constraint firstItem="CzU-Iq-3NX" firstAttribute="top" secondItem="g3Q-95-aj5" secondAttribute="bottom" constant="8" id="cVV-xZ-l1S"/>
                             <constraint firstItem="2qx-XZ-bYJ" firstAttribute="centerY" secondItem="GMh-qv-AHc" secondAttribute="centerY" id="duS-Um-3IR"/>
                             <constraint firstItem="2qx-XZ-bYJ" firstAttribute="centerX" secondItem="GMh-qv-AHc" secondAttribute="centerX" id="eB7-PA-aXM"/>
                             <constraint firstAttribute="trailing" secondItem="IQ4-ak-rpg" secondAttribute="trailing" id="gsG-Nq-uXa"/>
+                            <constraint firstItem="IQ4-ak-rpg" firstAttribute="top" secondItem="CzU-Iq-3NX" secondAttribute="bottom" constant="8" id="hoH-k7-a2m"/>
+                            <constraint firstItem="CzU-Iq-3NX" firstAttribute="leading" secondItem="GMh-qv-AHc" secondAttribute="leading" constant="15" id="sUP-w6-9wi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="errorLabel" destination="2qx-XZ-bYJ" id="6BA-VB-ThY"/>
+                        <outlet property="segmentedControl" destination="CzU-Iq-3NX" id="iFx-OC-KAL"/>
                         <outlet property="tableView" destination="IQ4-ak-rpg" id="EcQ-l2-n4c"/>
                     </connections>
                 </viewController>

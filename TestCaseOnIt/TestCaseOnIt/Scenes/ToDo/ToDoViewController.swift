@@ -9,6 +9,13 @@
 
 import UIKit
 
+enum ToDoType: Int {
+  case pending = 0
+  case completed
+  case all
+}
+
+
 protocol ToDoViewControllerInput
 {
   func displayListUser(viewModel: ToDosViewModel)
@@ -17,7 +24,7 @@ protocol ToDoViewControllerInput
 
 protocol ToDoViewControllerOutput
 {
-  func loadToDos()
+  func loadToDos(type: ToDoType)
   var user: User! { get set }
 }
 
@@ -28,6 +35,7 @@ class ToDoViewController: UIViewController, ToDoViewControllerInput, UITableView
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var errorLabel: UILabel!
+  @IBOutlet weak var segmentedControl: UISegmentedControl!
   
   var displayedToDos: [String] = []
   
@@ -44,17 +52,30 @@ class ToDoViewController: UIViewController, ToDoViewControllerInput, UITableView
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    configView()
     loadToDosOnLoad()
+  }
+  
+  func configView(){
+    
+    segmentedControl.setTitle(NSLocalizedString("todos.segmente.pending", comment: ""), forSegmentAt: 0)
+    segmentedControl.setTitle(NSLocalizedString("todos.segmente.completed", comment: ""), forSegmentAt: 0)
+    segmentedControl.addTarget(self, action: #selector(ToDoViewController.action), for: .valueChanged)
   }
   
   // MARK: - Event handling
   
   func loadToDosOnLoad()
   {
-    output.loadToDos()
+    output.loadToDos(type: ToDoType.all)
   }
   
   // MARK: - Display logic
+  
+  func action() {
+    
+    output.loadToDos(type: ToDoType(rawValue: segmentedControl.selectedSegmentIndex)!)
+  }
   
   func displayListUser(viewModel: ToDosViewModel){
     

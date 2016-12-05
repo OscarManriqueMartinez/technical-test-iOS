@@ -36,18 +36,7 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   var refreshControl: UIRefreshControl!
   var displayedUsers: [UserListViewModel.DisplayedUser] = []
   var filteredUsers: [UserListViewModel.DisplayedUser] = []
-  
-  func filterContentForSearchText(searchText: String) {
-    filteredUsers = displayedUsers.filter { user in
-      return user.name.lowercased().contains(searchText.lowercased()) || user.email.lowercased().contains(searchText.lowercased()) || user.website.lowercased().contains(searchText.lowercased())
-    }
-  }
 
-  // MARK: - UISearchResultsUpdating
-  
-  func updateSearchResults(for searchController: UISearchController) {
-    output.searchUser(text: searchController.searchBar.text!)
-  }
   
   // MARK: - Object lifecycle
   
@@ -81,6 +70,12 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
     tableView.tableHeaderView = searchController.searchBar
   }
   
+  
+  // MARK: - UISearchResultsUpdating
+  
+  func updateSearchResults(for searchController: UISearchController) {
+    output.searchUser(text: searchController.searchBar.text!)
+  }
   
   // MARK: - Event handling
   
