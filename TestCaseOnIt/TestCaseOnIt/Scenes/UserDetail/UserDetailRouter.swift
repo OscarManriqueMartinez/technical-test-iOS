@@ -26,12 +26,15 @@ class UserDetailRouter: UserDetailRouterInput
   
   // MARK: - Communication
   
-  func passDataToNextScene(segue: UIStoryboardSegue)
+  func passDataToNextScene(_ segue: UIStoryboardSegue, sender: Any?)
   {
     // NOTE: Teach the router which scenes it can communicate with
     
     if segue.identifier == "toDoSegue" {
       passDataToDoScene(segue: segue)
+      
+    }else if segue.identifier == "albumSegue" {
+      passDataAlbumScene(segue, sender: sender)
     }
   }
   
@@ -45,5 +48,19 @@ class UserDetailRouter: UserDetailRouterInput
     let backItem = UIBarButtonItem()
     backItem.title = user?.name
     viewController.navigationItem.backBarButtonItem = backItem
+  }
+  
+  func passDataAlbumScene(_ segue: UIStoryboardSegue, sender: Any?)
+  {
+    if let album : Album = sender as! Album?{
+      let user = viewController.output.user
+      
+      let nextViewController = segue.destination as! AlbumViewController
+      nextViewController.output.album = album
+      
+      let backItem = UIBarButtonItem()
+      backItem.title = user?.name
+      viewController.navigationItem.backBarButtonItem = backItem
+    }
   }
 }

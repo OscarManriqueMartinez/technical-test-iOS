@@ -25,10 +25,10 @@ class ToDoPresenter: ToDoPresenterInput
 {
   weak var output: ToDoPresenterOutput!
   
+  
   // MARK: - Presentation logic
   
   func presentToDos(response: ToDosResponse){
-    
     
     var displayedToDos: [String] = []
     

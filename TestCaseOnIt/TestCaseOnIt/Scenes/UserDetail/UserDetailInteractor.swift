@@ -12,6 +12,7 @@ import UIKit
 protocol UserDetailInteractorInput
 {
   func loadAlbums()
+  var albums: [Album] { get }
   var user: User! { get set }
 }
 
@@ -32,7 +33,6 @@ class UserDetailInteractor: UserDetailInteractorInput
   
   func loadAlbums()
   {
-    // NOTE: Create some Worker to do the work
     
     worker = UserDetailWorker()
     worker.getAlbums(user.id , success: { (albums) in

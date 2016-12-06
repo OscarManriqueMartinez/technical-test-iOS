@@ -18,6 +18,7 @@ protocol UserDetailViewControllerInput
 protocol UserDetailViewControllerOutput
 {
   func loadAlbums()
+  var albums: [Album] { get }
   var user: User! { get set }
 }
 
@@ -152,6 +153,22 @@ class UserDetailViewController: UIViewController, UserDetailViewControllerInput,
       let cell = tableView.dequeueReusableCell(withIdentifier: "albumHeader") as! AlbumHeaderCell
       cell.configCell(NSLocalizedString("userDetail.album", comment: ""))
       return cell
+    }
+  }
+  
+  
+  // MARK: - Table view delegate
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    tableView.deselectRow(at: indexPath, animated: true)
+    
+    if let albums = userDetail?.albums{
+      if albums.count != 0 {
+        
+        let album: Album = self.output.albums[(indexPath as NSIndexPath).row]
+        self.performSegue(withIdentifier: "albumSegue", sender: album)
+      }
     }
   }
   

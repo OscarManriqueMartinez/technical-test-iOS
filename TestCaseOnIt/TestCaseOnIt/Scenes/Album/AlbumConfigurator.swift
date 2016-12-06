@@ -1,5 +1,5 @@
 //
-//  UserDetailConfigurator.swift
+//  AlbumConfigurator.swift
 //  TestCaseOnIt
 //
 //  Created by Oscar Manrique Martinez on 6/12/16.
@@ -11,41 +11,41 @@ import UIKit
 
 // MARK: - Connect View, Interactor, and Presenter
 
-extension UserDetailViewController: UserDetailPresenterOutput
+extension AlbumViewController: AlbumPresenterOutput
 {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
-    router.passDataToNextScene(segue, sender: sender)
+    router.passDataToNextScene(segue: segue)
   }
 }
 
-extension UserDetailInteractor: UserDetailViewControllerOutput
+extension AlbumInteractor: AlbumViewControllerOutput
 {
 }
 
-extension UserDetailPresenter: UserDetailInteractorOutput
+extension AlbumPresenter: AlbumInteractorOutput
 {
 }
 
-class UserDetailConfigurator
+class AlbumConfigurator
 {
   // MARK: - Object lifecycle
   
-  static let sharedInstance = UserDetailConfigurator()
+  static let sharedInstance = AlbumConfigurator()
   
   private init() {}
   
   // MARK: - Configuration
   
-  func configure(viewController: UserDetailViewController)
+  func configure(viewController: AlbumViewController)
   {
-    let router = UserDetailRouter()
+    let router = AlbumRouter()
     router.viewController = viewController
     
-    let presenter = UserDetailPresenter()
+    let presenter = AlbumPresenter()
     presenter.output = viewController
     
-    let interactor = UserDetailInteractor()
+    let interactor = AlbumInteractor()
     interactor.output = presenter
     
     viewController.output = interactor

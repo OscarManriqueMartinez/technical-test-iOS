@@ -38,6 +38,15 @@
 		55BAE95D1DF6CE9200DBDCBA /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE95C1DF6CE9200DBDCBA /* MapCell.swift */; };
 		55BAE95F1DF6D52900DBDCBA /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE95E1DF6D52900DBDCBA /* Album.swift */; };
 		55BAE9611DF6EA9E00DBDCBA /* AddressAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9601DF6EA9E00DBDCBA /* AddressAnnotation.swift */; };
+		55BAE9781DF71AE600DBDCBA /* AlbumConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9711DF71AE600DBDCBA /* AlbumConfigurator.swift */; };
+		55BAE9791DF71AE600DBDCBA /* AlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9721DF71AE600DBDCBA /* AlbumInteractor.swift */; };
+		55BAE97A1DF71AE600DBDCBA /* AlbumModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9731DF71AE600DBDCBA /* AlbumModels.swift */; };
+		55BAE97B1DF71AE600DBDCBA /* AlbumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9741DF71AE600DBDCBA /* AlbumPresenter.swift */; };
+		55BAE97C1DF71AE600DBDCBA /* AlbumRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9751DF71AE600DBDCBA /* AlbumRouter.swift */; };
+		55BAE97D1DF71AE600DBDCBA /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9761DF71AE600DBDCBA /* AlbumViewController.swift */; };
+		55BAE97E1DF71AE600DBDCBA /* AlbumWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9771DF71AE600DBDCBA /* AlbumWorker.swift */; };
+		55BAE9801DF7240500DBDCBA /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE97F1DF7240500DBDCBA /* ImageCell.swift */; };
+		55BAE9821DF7259500DBDCBA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9811DF7259500DBDCBA /* Image.swift */; };
 		55F6E12B1DF4A08F003D70E8 /* ToDoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F6E1241DF4A08F003D70E8 /* ToDoConfigurator.swift */; };
 		55F6E12C1DF4A08F003D70E8 /* ToDoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F6E1251DF4A08F003D70E8 /* ToDoInteractor.swift */; };
 		55F6E12D1DF4A08F003D70E8 /* ToDoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F6E1261DF4A08F003D70E8 /* ToDoModels.swift */; };
@@ -106,6 +115,15 @@
 		55BAE95C1DF6CE9200DBDCBA /* MapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCell.swift; path = Scenes/UserDetail/MapCell.swift; sourceTree = "<group>"; };
 		55BAE95E1DF6D52900DBDCBA /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Album.swift; path = Model/Album.swift; sourceTree = "<group>"; };
 		55BAE9601DF6EA9E00DBDCBA /* AddressAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressAnnotation.swift; path = Model/AddressAnnotation.swift; sourceTree = "<group>"; };
+		55BAE9711DF71AE600DBDCBA /* AlbumConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumConfigurator.swift; path = Scenes/Album/AlbumConfigurator.swift; sourceTree = "<group>"; };
+		55BAE9721DF71AE600DBDCBA /* AlbumInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumInteractor.swift; path = Scenes/Album/AlbumInteractor.swift; sourceTree = "<group>"; };
+		55BAE9731DF71AE600DBDCBA /* AlbumModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumModels.swift; path = Scenes/Album/AlbumModels.swift; sourceTree = "<group>"; };
+		55BAE9741DF71AE600DBDCBA /* AlbumPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumPresenter.swift; path = Scenes/Album/AlbumPresenter.swift; sourceTree = "<group>"; };
+		55BAE9751DF71AE600DBDCBA /* AlbumRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumRouter.swift; path = Scenes/Album/AlbumRouter.swift; sourceTree = "<group>"; };
+		55BAE9761DF71AE600DBDCBA /* AlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumViewController.swift; path = Scenes/Album/AlbumViewController.swift; sourceTree = "<group>"; };
+		55BAE9771DF71AE600DBDCBA /* AlbumWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumWorker.swift; path = Scenes/Album/AlbumWorker.swift; sourceTree = "<group>"; };
+		55BAE97F1DF7240500DBDCBA /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = Scenes/Album/ImageCell.swift; sourceTree = "<group>"; };
+		55BAE9811DF7259500DBDCBA /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Model/Image.swift; sourceTree = "<group>"; };
 		55F6E1241DF4A08F003D70E8 /* ToDoConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoConfigurator.swift; path = Scenes/ToDo/ToDoConfigurator.swift; sourceTree = "<group>"; };
 		55F6E1251DF4A08F003D70E8 /* ToDoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoInteractor.swift; path = Scenes/ToDo/ToDoInteractor.swift; sourceTree = "<group>"; };
 		55F6E1261DF4A08F003D70E8 /* ToDoModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoModels.swift; path = Scenes/ToDo/ToDoModels.swift; sourceTree = "<group>"; };
@@ -203,6 +221,7 @@
 		5501FA9D1DF40AEF00E1E4F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				55BAE9621DF7193200DBDCBA /* Album */,
 				55BAE9451DF6C46000DBDCBA /* UserDetail */,
 				55F6E1231DF4A05F003D70E8 /* ToDo */,
 				5501FA9E1DF40AF900E1E4F5 /* ListUser */,
@@ -245,6 +264,7 @@
 				55F6E1321DF4AF26003D70E8 /* ToDo.swift */,
 				55BAE95E1DF6D52900DBDCBA /* Album.swift */,
 				55BAE9601DF6EA9E00DBDCBA /* AddressAnnotation.swift */,
+				55BAE9811DF7259500DBDCBA /* Image.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -279,6 +299,21 @@
 				55BAE9551DF6C62F00DBDCBA /* MainButton.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		55BAE9621DF7193200DBDCBA /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				55BAE9711DF71AE600DBDCBA /* AlbumConfigurator.swift */,
+				55BAE9721DF71AE600DBDCBA /* AlbumInteractor.swift */,
+				55BAE9731DF71AE600DBDCBA /* AlbumModels.swift */,
+				55BAE9741DF71AE600DBDCBA /* AlbumPresenter.swift */,
+				55BAE9751DF71AE600DBDCBA /* AlbumRouter.swift */,
+				55BAE9761DF71AE600DBDCBA /* AlbumViewController.swift */,
+				55BAE9771DF71AE600DBDCBA /* AlbumWorker.swift */,
+				55BAE97F1DF7240500DBDCBA /* ImageCell.swift */,
+			);
+			name = Album;
 			sourceTree = "<group>";
 		};
 		55F6E1231DF4A05F003D70E8 /* ToDo */ = {
@@ -506,16 +541,25 @@
 				55F6E12E1DF4A08F003D70E8 /* ToDoPresenter.swift in Sources */,
 				55BAE94E1DF6C49100DBDCBA /* UserDetailInteractor.swift in Sources */,
 				55F6E1331DF4AF26003D70E8 /* ToDo.swift in Sources */,
+				55BAE9821DF7259500DBDCBA /* Image.swift in Sources */,
 				55F6E12F1DF4A08F003D70E8 /* ToDoRouter.swift in Sources */,
+				55BAE97C1DF71AE600DBDCBA /* AlbumRouter.swift in Sources */,
 				5501FAA91DF40B3D00E1E4F5 /* ListUserPresenter.swift in Sources */,
 				5501FAA71DF40B3D00E1E4F5 /* ListUserInteractor.swift in Sources */,
+				55BAE97B1DF71AE600DBDCBA /* AlbumPresenter.swift in Sources */,
 				55BAE9531DF6C49100DBDCBA /* UserDetailWorker.swift in Sources */,
 				55F6E12D1DF4A08F003D70E8 /* ToDoModels.swift in Sources */,
 				55BAE9501DF6C49100DBDCBA /* UserDetailPresenter.swift in Sources */,
+				55BAE97D1DF71AE600DBDCBA /* AlbumViewController.swift in Sources */,
 				55BAE9521DF6C49100DBDCBA /* UserDetailViewController.swift in Sources */,
+				55BAE9801DF7240500DBDCBA /* ImageCell.swift in Sources */,
 				5501FAAA1DF40B3D00E1E4F5 /* ListUserRouter.swift in Sources */,
 				5501FA6D1DF409F200E1E4F5 /* AppDelegate.swift in Sources */,
+				55BAE9791DF71AE600DBDCBA /* AlbumInteractor.swift in Sources */,
+				55BAE97A1DF71AE600DBDCBA /* AlbumModels.swift in Sources */,
+				55BAE9781DF71AE600DBDCBA /* AlbumConfigurator.swift in Sources */,
 				5501FA751DF409F200E1E4F5 /* TestCaseOnIt.xcdatamodeld in Sources */,
+				55BAE97E1DF71AE600DBDCBA /* AlbumWorker.swift in Sources */,
 				5501FAAB1DF40B3D00E1E4F5 /* ListUserViewController.swift in Sources */,
 				55F6E12C1DF4A08F003D70E8 /* ToDoInteractor.swift in Sources */,
 				5501FAA81DF40B3D00E1E4F5 /* ListUserModels.swift in Sources */,

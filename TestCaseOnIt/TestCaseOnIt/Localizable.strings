@@ -21,3 +21,7 @@ userDetail.album = "Albums";
 userDetail.button.toDos = "See ToDos list";
 userDetail.album.empty = "User don't have any album";
 userDetail.album.error = "Error server";
+
+album.title = "Album pics";
+
+
