@@ -30,11 +30,11 @@ class ListUserRouter: ListUserRouterInput
   {
     
     if segue.identifier == "userDetailSegue" {
-      passDataToDoScene(segue, sender: sender)
+      passDataUserDetailScene(segue, sender: sender)
     }
   }
   
-  func passDataToDoScene(_ segue: UIStoryboardSegue, sender: Any?)
+  func passDataUserDetailScene(_ segue: UIStoryboardSegue, sender: Any?)
   {
     if let selectedUser : User = sender as! User? {
 

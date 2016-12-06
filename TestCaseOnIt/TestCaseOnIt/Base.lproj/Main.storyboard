@@ -102,7 +102,6 @@
                         <outlet property="errorLabel" destination="bqK-op-mAm" id="QhZ-Bt-ntf"/>
                         <outlet property="searchDisplayController" destination="JJY-cu-9JG" id="5QU-Ch-V3c"/>
                         <outlet property="tableView" destination="2kR-qN-EfG" id="JhM-H5-I3L"/>
-                        <segue destination="pzv-UH-I3I" kind="show" identifier="toDoSegue" id="AhA-6f-nHl"/>
                         <segue destination="kdr-mI-NIA" kind="show" identifier="userDetailSegue" id="onz-uf-0v1"/>
                     </connections>
                 </viewController>
@@ -202,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1p-F3-cX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2022" y="629"/>
+            <point key="canvasLocation" x="3073" y="903"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="ypw-GN-qAu">
@@ -222,6 +221,9 @@
                                     <constraint firstAttribute="height" constant="40" id="0au-mh-Tai"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="pzv-UH-I3I" kind="show" identifier="toDoSegue" id="F93-hr-FsX"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="267" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FSv-XB-BPo">
                                 <rect key="frame" x="0.0" y="64" width="375" height="533"/>
@@ -369,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxr-LC-W7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2021.5999999999999" y="-334.18290854572717"/>
+            <point key="canvasLocation" x="1999" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PgV-yp-Rdi">
