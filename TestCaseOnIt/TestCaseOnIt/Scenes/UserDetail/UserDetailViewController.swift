@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import MapKit
 
 protocol UserDetailViewControllerInput
 {
@@ -20,7 +21,7 @@ protocol UserDetailViewControllerOutput
   var user: User! { get set }
 }
 
-class UserDetailViewController: UIViewController, UserDetailViewControllerInput, UITableViewDelegate, UITableViewDataSource
+class UserDetailViewController: UIViewController, UserDetailViewControllerInput, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate
 {
   var output: UserDetailViewControllerOutput!
   var router: UserDetailRouter!
@@ -108,7 +109,8 @@ class UserDetailViewController: UIViewController, UserDetailViewControllerInput,
       let mapCell = tableView.dequeueReusableCell(withIdentifier: "mapCell") as! MapCell
       
       if let user = userDetail{
-        mapCell.configCell(user.username, phone: user.phone, company: user.company)
+        mapCell.mapView.delegate = self
+        mapCell.configCell(user.username, phone: user.phone, company: user.company, address: user.address, city: user.city, coordinate: user.coordinate)
       }
       
       return mapCell
@@ -151,5 +153,29 @@ class UserDetailViewController: UIViewController, UserDetailViewControllerInput,
       cell.configCell(NSLocalizedString("userDetail.album", comment: ""))
       return cell
     }
+  }
+  
+  
+  // MARK: - Map delegate
+  
+  func mapView(_ mapView: MKMapView,
+               viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    if let annotation = annotation as? AddressAnnotation {
+      let identifier = "addressPin"
+      var view: MKPinAnnotationView
+      if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        as? MKPinAnnotationView { // 2
+        dequeuedView.annotation = annotation
+        view = dequeuedView
+      } else {
+        // 3
+        view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        view.canShowCallout = true
+        view.calloutOffset = CGPoint(x: -5, y: 5)
+        view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
+      }
+      return view
+    }
+    return nil
   }
 }

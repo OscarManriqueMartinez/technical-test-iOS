@@ -229,7 +229,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="533"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mapCell" rowHeight="267" id="pDU-Sq-JFP" customClass="MapCell" customModule="TestCaseOnIt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="mapCell" rowHeight="267" id="pDU-Sq-JFP" customClass="MapCell" customModule="TestCaseOnIt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="267"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pDU-Sq-JFP" id="v7k-fJ-axy">
@@ -255,7 +255,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwQ-hS-mrn">
-                                                    <rect key="frame" x="141" y="37" width="226.5" height="21"/>
+                                                    <rect key="frame" x="140.5" y="37" width="226.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -267,11 +267,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koa-TM-WOO">
-                                                    <rect key="frame" x="140" y="66" width="226.5" height="21"/>
+                                                    <rect key="frame" x="140.5" y="66" width="226.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-Al-TwZ">
+                                                    <rect key="frame" x="8" y="97" width="359" height="161"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="161" id="PaV-ND-5Ri"/>
+                                                    </constraints>
+                                                </mapView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="koa-TM-WOO" firstAttribute="trailing" secondItem="QDT-7c-16O" secondAttribute="trailing" id="3ia-DB-prB"/>
@@ -282,22 +288,26 @@
                                                 <constraint firstItem="GwQ-hS-mrn" firstAttribute="trailing" secondItem="QDT-7c-16O" secondAttribute="trailing" id="Rad-2H-ehy"/>
                                                 <constraint firstItem="iJg-4v-lv9" firstAttribute="leading" secondItem="xOK-8L-CWC" secondAttribute="leading" id="T8g-T8-FQf"/>
                                                 <constraint firstItem="GwQ-hS-mrn" firstAttribute="top" secondItem="Hj5-to-34g" secondAttribute="top" id="TgY-8h-SXT"/>
+                                                <constraint firstItem="BeK-Al-TwZ" firstAttribute="bottom" secondItem="v7k-fJ-axy" secondAttribute="bottomMargin" id="UXi-Up-cHI"/>
                                                 <constraint firstItem="QDT-7c-16O" firstAttribute="leading" secondItem="xOK-8L-CWC" secondAttribute="trailing" constant="5" id="UmV-iN-w65"/>
                                                 <constraint firstItem="koa-TM-WOO" firstAttribute="leading" secondItem="iJg-4v-lv9" secondAttribute="trailing" constant="5" id="VQR-3b-ptN"/>
                                                 <constraint firstItem="GwQ-hS-mrn" firstAttribute="width" secondItem="Hj5-to-34g" secondAttribute="width" multiplier="16:9" id="YDi-uK-KO2"/>
+                                                <constraint firstItem="BeK-Al-TwZ" firstAttribute="top" secondItem="koa-TM-WOO" secondAttribute="bottom" constant="10" id="Zpc-hN-847"/>
+                                                <constraint firstItem="BeK-Al-TwZ" firstAttribute="trailing" secondItem="v7k-fJ-axy" secondAttribute="trailingMargin" id="dgO-K4-wQb"/>
                                                 <constraint firstItem="QDT-7c-16O" firstAttribute="width" secondItem="xOK-8L-CWC" secondAttribute="width" multiplier="16:9" id="gec-He-EXn"/>
                                                 <constraint firstItem="iJg-4v-lv9" firstAttribute="top" secondItem="Hj5-to-34g" secondAttribute="bottom" constant="8" id="kIf-qn-fgg"/>
                                                 <constraint firstItem="xOK-8L-CWC" firstAttribute="top" secondItem="v7k-fJ-axy" secondAttribute="topMargin" id="n7y-GM-5JG"/>
                                                 <constraint firstAttribute="trailing" secondItem="QDT-7c-16O" secondAttribute="trailing" constant="8" id="se6-hK-L0M"/>
                                                 <constraint firstItem="Hj5-to-34g" firstAttribute="leading" secondItem="xOK-8L-CWC" secondAttribute="leading" id="tYU-fF-vaa"/>
+                                                <constraint firstItem="BeK-Al-TwZ" firstAttribute="leading" secondItem="v7k-fJ-axy" secondAttribute="leadingMargin" id="u2N-Wo-roe"/>
                                                 <constraint firstItem="koa-TM-WOO" firstAttribute="top" secondItem="iJg-4v-lv9" secondAttribute="top" id="vuG-P3-Hwm"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="iJg-4v-lv9" secondAttribute="bottom" constant="171" id="yh2-pz-S1E"/>
                                                 <constraint firstItem="koa-TM-WOO" firstAttribute="width" secondItem="iJg-4v-lv9" secondAttribute="width" multiplier="16:9" id="zjJ-8N-bpe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="companyDescription" destination="iJg-4v-lv9" id="hVR-VQ-6BD"/>
                                             <outlet property="companyValue" destination="koa-TM-WOO" id="2IR-Ld-UQH"/>
+                                            <outlet property="mapView" destination="BeK-Al-TwZ" id="BWe-81-rrl"/>
                                             <outlet property="phoneDescription" destination="Hj5-to-34g" id="qQ2-72-Ilf"/>
                                             <outlet property="phoneValue" destination="GwQ-hS-mrn" id="kZ0-er-mVk"/>
                                             <outlet property="usernameDescription" destination="xOK-8L-CWC" id="xbc-f4-rdZ"/>
@@ -371,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxr-LC-W7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1999" y="138"/>
+            <point key="canvasLocation" x="1997.5999999999999" y="137.18140929535232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PgV-yp-Rdi">

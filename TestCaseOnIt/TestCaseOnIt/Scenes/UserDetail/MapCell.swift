@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class MapCell: UITableViewCell {
 
@@ -16,6 +17,7 @@ class MapCell: UITableViewCell {
   @IBOutlet weak var phoneDescription: UILabel!
   @IBOutlet weak var companyValue: UILabel!
   @IBOutlet weak var companyDescription: UILabel!
+  @IBOutlet weak var mapView: MKMapView!
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -29,10 +31,27 @@ class MapCell: UITableViewCell {
     companyValue.adjustsFontSizeToFitWidth = true;
   }
   
-  open func configCell(_ username: String, phone: String, company: String) {
+  open func configCell(_ username: String, phone: String, company: String, address: String, city: String, coordinate: CLLocationCoordinate2D) {
     
     usernameValue.text = username
     phoneValue.text = phone
     companyValue.text = company
+    
+    let addressAnnotation = AddressAnnotation(address: address,
+                          city: city,
+                          coordinate: coordinate)
+    
+    mapView.addAnnotation(addressAnnotation)
+    
+    let initialLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+    centerMapOnLocation(location: initialLocation)
+
+  }
+  
+  let regionRadius: CLLocationDistance = 1000
+  func centerMapOnLocation(location: CLLocation) {
+    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                              regionRadius * 2.0, regionRadius * 2.0)
+    mapView.setRegion(coordinateRegion, animated: true)
   }
 }

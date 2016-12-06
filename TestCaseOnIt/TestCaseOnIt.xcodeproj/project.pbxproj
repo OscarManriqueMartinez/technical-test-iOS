@@ -37,6 +37,7 @@
 		55BAE9591DF6CD3E00DBDCBA /* AlbumHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9581DF6CD3E00DBDCBA /* AlbumHeaderCell.swift */; };
 		55BAE95D1DF6CE9200DBDCBA /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE95C1DF6CE9200DBDCBA /* MapCell.swift */; };
 		55BAE95F1DF6D52900DBDCBA /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE95E1DF6D52900DBDCBA /* Album.swift */; };
+		55BAE9611DF6EA9E00DBDCBA /* AddressAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9601DF6EA9E00DBDCBA /* AddressAnnotation.swift */; };
 		55F6E12B1DF4A08F003D70E8 /* ToDoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F6E1241DF4A08F003D70E8 /* ToDoConfigurator.swift */; };
 		55F6E12C1DF4A08F003D70E8 /* ToDoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F6E1251DF4A08F003D70E8 /* ToDoInteractor.swift */; };
 		55F6E12D1DF4A08F003D70E8 /* ToDoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F6E1261DF4A08F003D70E8 /* ToDoModels.swift */; };
@@ -104,6 +105,7 @@
 		55BAE9581DF6CD3E00DBDCBA /* AlbumHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlbumHeaderCell.swift; path = Scenes/UserDetail/AlbumHeaderCell.swift; sourceTree = "<group>"; };
 		55BAE95C1DF6CE9200DBDCBA /* MapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCell.swift; path = Scenes/UserDetail/MapCell.swift; sourceTree = "<group>"; };
 		55BAE95E1DF6D52900DBDCBA /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Album.swift; path = Model/Album.swift; sourceTree = "<group>"; };
+		55BAE9601DF6EA9E00DBDCBA /* AddressAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressAnnotation.swift; path = Model/AddressAnnotation.swift; sourceTree = "<group>"; };
 		55F6E1241DF4A08F003D70E8 /* ToDoConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoConfigurator.swift; path = Scenes/ToDo/ToDoConfigurator.swift; sourceTree = "<group>"; };
 		55F6E1251DF4A08F003D70E8 /* ToDoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoInteractor.swift; path = Scenes/ToDo/ToDoInteractor.swift; sourceTree = "<group>"; };
 		55F6E1261DF4A08F003D70E8 /* ToDoModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoModels.swift; path = Scenes/ToDo/ToDoModels.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				5501FAB61DF42E9600E1E4F5 /* User.swift */,
 				55F6E1321DF4AF26003D70E8 /* ToDo.swift */,
 				55BAE95E1DF6D52900DBDCBA /* Album.swift */,
+				55BAE9601DF6EA9E00DBDCBA /* AddressAnnotation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				55F6E12B1DF4A08F003D70E8 /* ToDoConfigurator.swift in Sources */,
 				55BAE9511DF6C49100DBDCBA /* UserDetailRouter.swift in Sources */,
 				55BAE94D1DF6C49100DBDCBA /* UserDetailConfigurator.swift in Sources */,
+				55BAE9611DF6EA9E00DBDCBA /* AddressAnnotation.swift in Sources */,
 				55F6E1301DF4A08F003D70E8 /* ToDoViewController.swift in Sources */,
 				5501FAB71DF42E9600E1E4F5 /* User.swift in Sources */,
 				55F6E1351DF4B5A4003D70E8 /* ToDoCell.swift in Sources */,
