@@ -46,7 +46,7 @@ class UserDetailRouter: UserDetailRouterInput
     nextViewController.output.user = user
     
     let backItem = UIBarButtonItem()
-    backItem.title = user?.name
+    backItem.title = user?.onlyName
     viewController.navigationItem.backBarButtonItem = backItem
   }
   
@@ -59,7 +59,7 @@ class UserDetailRouter: UserDetailRouterInput
       nextViewController.output.album = album
       
       let backItem = UIBarButtonItem()
-      backItem.title = user?.name
+      backItem.title = user?.onlyName
       viewController.navigationItem.backBarButtonItem = backItem
     }
   }

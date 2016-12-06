@@ -18,6 +18,10 @@ struct User : JSONJoy {
   let phone: String
   let username: String
   let website: String
+  var onlyName: String {
+    let fullNameArr = name.components(separatedBy: " ")
+    return fullNameArr[0]
+  }
   
   init(_ decoder: JSONDecoder) throws {
     address = try Address(decoder["address"])
@@ -29,6 +33,8 @@ struct User : JSONJoy {
     username = try decoder["username"].get()
     website = try decoder["website"].get()
   }
+	
+  
 }
 
 struct Address : JSONJoy {

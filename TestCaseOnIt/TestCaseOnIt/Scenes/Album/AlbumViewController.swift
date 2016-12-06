@@ -97,8 +97,8 @@ class AlbumViewController: UICollectionViewController, AlbumViewControllerInput
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
-//    cell.configCell("hola")
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
+    cell.configCell(imagesUrl[(indexPath as NSIndexPath).row])
     return cell
   }
   

@@ -10,11 +10,10 @@ import UIKit
 
 class ImageCell: UICollectionViewCell {
  
-  @IBOutlet weak var title: UILabel!
+  @IBOutlet weak var imageView: UIImageView!
   
-  open func configCell(_ title: String) {
+  open func configCell(_ imageUrl: String) {
     
-    self.title.text = title
-    
+    imageView.downloadedFrom(link: imageUrl)
   }
 }
