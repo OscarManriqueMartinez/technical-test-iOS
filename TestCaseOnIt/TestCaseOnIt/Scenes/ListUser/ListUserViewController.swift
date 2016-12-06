@@ -155,7 +155,7 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
       user = self.output.users[(indexPath as NSIndexPath).row]
     }
     
-    self.performSegue(withIdentifier: "toDoSegue", sender: user)
+    self.performSegue(withIdentifier: "userDetailSegue", sender: user)
   }
   
 }
