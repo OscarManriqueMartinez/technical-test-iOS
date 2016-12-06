@@ -53,7 +53,6 @@ class ToDoViewController: UIViewController, ToDoViewControllerInput, UITableView
   {
     super.viewDidLoad()
     
-//    self.navigationController?.navigationBar.backItem?.title = "Anything Else"
     configView()
     loadToDosOnLoad()
   }
@@ -109,7 +108,7 @@ class ToDoViewController: UIViewController, ToDoViewControllerInput, UITableView
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "toDoCell") as! ToDoCell
-    cell .configCell(displayedToDos[(indexPath as NSIndexPath).row])
+    cell.configCell(displayedToDos[(indexPath as NSIndexPath).row])
 
     return cell
   }

@@ -12,3 +12,12 @@ listUser.search.placeholder = "search";
 todos.title = "ToDos";
 todos.segmente.pending = "Pending";
 todos.segmente.completed = "Completed";
+
+userDetail.back = "Users";
+userDetail.username = "Username:";
+userDetail.phone = "Phone:";
+userDetail.company = "Company:";
+userDetail.album = "Albums";
+userDetail.button.toDos = "See ToDos list";
+userDetail.album.empty = "User don't have any album";
+userDetail.album.error = "Error server";

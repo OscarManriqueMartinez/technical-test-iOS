@@ -29,19 +29,20 @@ class ListUserRouter: ListUserRouterInput
   func passDataToNextScene(_ segue: UIStoryboardSegue, sender: Any?)
   {
     
-    if segue.identifier == "toDoSegue" {
-      passDataToDoScene(segue, sender: sender)
+    if segue.identifier == "userDetailSegue" {
+      passDataUserDetailScene(segue, sender: sender)
     }
   }
   
-  func passDataToDoScene(_ segue: UIStoryboardSegue, sender: Any?)
+  func passDataUserDetailScene(_ segue: UIStoryboardSegue, sender: Any?)
   {
     if let selectedUser : User = sender as! User? {
-      let toDoViewController = segue.destination as! ToDoViewController
-      toDoViewController.output.user = selectedUser
-      
+
+      let nextViewController = segue.destination as! UserDetailViewController
+      nextViewController.output.user = selectedUser
+
       let backItem = UIBarButtonItem()
-      backItem.title = selectedUser.name
+      backItem.title = NSLocalizedString("userDetail.back", comment: "")
       viewController.navigationItem.backBarButtonItem = backItem
     }
   }
