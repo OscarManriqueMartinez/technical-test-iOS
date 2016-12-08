@@ -85,6 +85,29 @@ open class _CDUser: NSManagedObject {
         return self.todos.mutableCopy() as! NSMutableSet
     }
 
+    class func fetchAllUsers(managedObjectContext: NSManagedObjectContext) -> [Any]? {
+        return self.fetchAllUsers(managedObjectContext: managedObjectContext, error: nil)
+    }
+
+    class func fetchAllUsers(managedObjectContext: NSManagedObjectContext, error outError: NSErrorPointer) -> [Any]? {
+        guard let psc = managedObjectContext.persistentStoreCoordinator else { return nil }
+        let model = psc.managedObjectModel
+        let substitutionVariables : [String : Any] = [:]
+
+        guard let fetchRequest = model.fetchRequestFromTemplate(withName: "AllUsers", substitutionVariables: substitutionVariables) else {
+        	assert(false, "Can't find fetch request named \"AllUsers\".")
+		return nil
+	}
+        var results = Array<Any>()
+        do {
+             results = try managedObjectContext.fetch(fetchRequest)
+        } catch {
+          print("Error executing fetch request: \(error)")
+        }
+
+        return results
+    }
+
 }
 
 extension _CDUser {

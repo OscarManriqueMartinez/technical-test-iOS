@@ -10,7 +10,6 @@
     <entity name="CDAlbum" representedClassName="CDAlbum" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="userId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDImage" inverseName="album" inverseEntity="CDImage" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="albums" inverseEntity="CDUser" syncable="YES"/>
     </entity>
@@ -49,18 +48,15 @@
         <relationship name="albums" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDAlbum" inverseName="user" inverseEntity="CDAlbum" syncable="YES"/>
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CDCompany" syncable="YES"/>
         <relationship name="todos" toMany="YES" deletionRule="Cascade" destinationEntity="CDToDo" inverseName="user" inverseEntity="CDToDo" syncable="YES"/>
-        <fetchedProperty name="allUser" optional="YES" syncable="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="CDUser"/>
-        </fetchedProperty>
     </entity>
     <fetchRequest name="AllUsers" entity="CDUser" predicateString="TRUEPREDICATE"/>
     <elements>
-        <element name="CDUser" positionX="-261" positionY="-432" width="128" height="221"/>
+        <element name="CDUser" positionX="-261" positionY="-432" width="128" height="193"/>
         <element name="CDAddress" positionX="-110" positionY="-558" width="128" height="118"/>
         <element name="CDGeoPosition" positionX="79" positionY="-505" width="128" height="73"/>
         <element name="CDCompany" positionX="-495" positionY="-565" width="128" height="88"/>
         <element name="CDToDo" positionX="-468" positionY="-172" width="128" height="118"/>
-        <element name="CDAlbum" positionX="-72" positionY="-162" width="128" height="118"/>
+        <element name="CDAlbum" positionX="-72" positionY="-162" width="128" height="103"/>
         <element name="CDImage" positionX="115" positionY="-178" width="128" height="133"/>
     </elements>
 </model>

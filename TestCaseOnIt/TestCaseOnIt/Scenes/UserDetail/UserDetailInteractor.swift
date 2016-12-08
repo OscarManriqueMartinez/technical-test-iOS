@@ -35,16 +35,32 @@ class UserDetailInteractor: UserDetailInteractorInput
   {
     
     worker = UserDetailWorker()
-    worker.getAlbums(user.id , success: { (albums) in
+    
+    if worker.isAlbumsEmpty(user: user) {
       
-      self.albums = albums
-      let response = AlbumsResponse(user:self.user, albums:albums)
-      self.output.presentUserDetail(response: response)
+      worker.getAlbums(user.id , success: { (albums) in
+        
+        self.worker.saveAlbums(albums, user: self.user)
+        self.sendAlbum(albums: albums)
+        
+      }, failure: {(error) in
+        let response = AlbumsResponse(user:self.user)
+        self.output.presentUserDetail(response:response)
+      })
+    }else{
       
-    }, failure: {(error) in
-      let response = AlbumsResponse(user:self.user)
-      self.output.presentUserDetail(response:response)
-      
-    })
+      let albums = worker.getAlbumsCoreData(user:user)
+      if albums.count > 0 {
+        sendAlbum(albums: albums)
+      }
+    }
   }
+  
+  func sendAlbum(albums: [Album]) {
+    self.albums = albums
+    let response = AlbumsResponse(user:self.user, albums:albums)
+    self.output.presentUserDetail(response: response)
+
+  }
+  
 }

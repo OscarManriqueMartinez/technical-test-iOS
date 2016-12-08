@@ -7,7 +7,6 @@ import CoreData
 public enum CDAlbumAttributes: String {
     case id = "id"
     case title = "title"
-    case userId = "userId"
 }
 
 public enum CDAlbumRelationships: String {
@@ -45,9 +44,6 @@ open class _CDAlbum: NSManagedObject {
 
     @NSManaged open
     var title: String?
-
-    @NSManaged open
-    var userId: NSNumber?
 
     // MARK: - Relationships
 

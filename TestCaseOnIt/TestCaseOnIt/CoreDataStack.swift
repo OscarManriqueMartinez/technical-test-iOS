@@ -51,4 +51,5 @@ class CoreDataStack {
       fatalError("Unresolved error \(error), \(error.userInfo)")
     }
   }
+  
 }
