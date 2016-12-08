@@ -24,4 +24,17 @@ struct ToDo : JSONJoy {
     title = try decoder["title"].get()
     completed = try decoder["completed"].get()
   }
+  
+  init(_ cdToDo: CDToDo){
+    
+    if let user = cdToDo.user {
+      userId = Int(user.id!)
+      
+    }else{
+      userId = 0
+    }
+    id = Int(cdToDo.id!)
+    title = cdToDo.title!
+    completed = Bool(cdToDo.completed!)
+  }
 }

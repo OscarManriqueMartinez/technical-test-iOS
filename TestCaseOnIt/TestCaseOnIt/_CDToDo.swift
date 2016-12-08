@@ -8,7 +8,6 @@ public enum CDToDoAttributes: String {
     case completed = "completed"
     case id = "id"
     case title = "title"
-    case userId = "userId"
 }
 
 public enum CDToDoRelationships: String {
@@ -48,9 +47,6 @@ open class _CDToDo: NSManagedObject {
 
     @NSManaged open
     var title: String?
-
-    @NSManaged open
-    var userId: NSNumber?
 
     // MARK: - Relationships
 
