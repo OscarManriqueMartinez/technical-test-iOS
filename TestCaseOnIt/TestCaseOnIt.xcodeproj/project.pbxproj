@@ -26,6 +26,21 @@
 		5501FAB41DF4180200E1E4F5 /* ListUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501FAB31DF4180200E1E4F5 /* ListUserCell.swift */; };
 		5501FAB71DF42E9600E1E4F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5501FAB61DF42E9600E1E4F5 /* User.swift */; };
 		554CDDE21DF609AF00ABF87F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CDDE11DF609AF00ABF87F /* Color.swift */; };
+		55A96F251DF967E900F78FB9 /* _CDAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F171DF967E900F78FB9 /* _CDAddress.swift */; };
+		55A96F261DF967E900F78FB9 /* _CDAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F181DF967E900F78FB9 /* _CDAlbum.swift */; };
+		55A96F271DF967E900F78FB9 /* _CDCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F191DF967E900F78FB9 /* _CDCompany.swift */; };
+		55A96F281DF967E900F78FB9 /* _CDGeoPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F1A1DF967E900F78FB9 /* _CDGeoPosition.swift */; };
+		55A96F291DF967E900F78FB9 /* _CDImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F1B1DF967E900F78FB9 /* _CDImage.swift */; };
+		55A96F2A1DF967E900F78FB9 /* _CDToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F1C1DF967E900F78FB9 /* _CDToDo.swift */; };
+		55A96F2B1DF967E900F78FB9 /* _CDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F1D1DF967E900F78FB9 /* _CDUser.swift */; };
+		55A96F2C1DF967E900F78FB9 /* CDAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F1E1DF967E900F78FB9 /* CDAddress.swift */; };
+		55A96F2D1DF967E900F78FB9 /* CDAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F1F1DF967E900F78FB9 /* CDAlbum.swift */; };
+		55A96F2E1DF967E900F78FB9 /* CDCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F201DF967E900F78FB9 /* CDCompany.swift */; };
+		55A96F2F1DF967E900F78FB9 /* CDGeoPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F211DF967E900F78FB9 /* CDGeoPosition.swift */; };
+		55A96F301DF967E900F78FB9 /* CDImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F221DF967E900F78FB9 /* CDImage.swift */; };
+		55A96F311DF967E900F78FB9 /* CDToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F231DF967E900F78FB9 /* CDToDo.swift */; };
+		55A96F321DF967E900F78FB9 /* CDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F241DF967E900F78FB9 /* CDUser.swift */; };
+		55A96F371DF9AE3F00F78FB9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F361DF9AE3F00F78FB9 /* CoreDataStack.swift */; };
 		55BAE94D1DF6C49100DBDCBA /* UserDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9461DF6C49100DBDCBA /* UserDetailConfigurator.swift */; };
 		55BAE94E1DF6C49100DBDCBA /* UserDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9471DF6C49100DBDCBA /* UserDetailInteractor.swift */; };
 		55BAE94F1DF6C49100DBDCBA /* UserDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9481DF6C49100DBDCBA /* UserDetailModels.swift */; };
@@ -104,6 +119,21 @@
 		5501FAB31DF4180200E1E4F5 /* ListUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListUserCell.swift; path = Scenes/ListUser/ListUserCell.swift; sourceTree = "<group>"; };
 		5501FAB61DF42E9600E1E4F5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		554CDDE11DF609AF00ABF87F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		55A96F171DF967E900F78FB9 /* _CDAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CDAddress.swift; sourceTree = "<group>"; };
+		55A96F181DF967E900F78FB9 /* _CDAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CDAlbum.swift; sourceTree = "<group>"; };
+		55A96F191DF967E900F78FB9 /* _CDCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CDCompany.swift; sourceTree = "<group>"; };
+		55A96F1A1DF967E900F78FB9 /* _CDGeoPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CDGeoPosition.swift; sourceTree = "<group>"; };
+		55A96F1B1DF967E900F78FB9 /* _CDImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CDImage.swift; sourceTree = "<group>"; };
+		55A96F1C1DF967E900F78FB9 /* _CDToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CDToDo.swift; sourceTree = "<group>"; };
+		55A96F1D1DF967E900F78FB9 /* _CDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CDUser.swift; sourceTree = "<group>"; };
+		55A96F1E1DF967E900F78FB9 /* CDAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDAddress.swift; sourceTree = "<group>"; };
+		55A96F1F1DF967E900F78FB9 /* CDAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDAlbum.swift; sourceTree = "<group>"; };
+		55A96F201DF967E900F78FB9 /* CDCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDCompany.swift; sourceTree = "<group>"; };
+		55A96F211DF967E900F78FB9 /* CDGeoPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGeoPosition.swift; sourceTree = "<group>"; };
+		55A96F221DF967E900F78FB9 /* CDImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDImage.swift; sourceTree = "<group>"; };
+		55A96F231DF967E900F78FB9 /* CDToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDToDo.swift; sourceTree = "<group>"; };
+		55A96F241DF967E900F78FB9 /* CDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDUser.swift; sourceTree = "<group>"; };
+		55A96F361DF9AE3F00F78FB9 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		55BAE9461DF6C49100DBDCBA /* UserDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailConfigurator.swift; path = Scenes/UserDetail/UserDetailConfigurator.swift; sourceTree = "<group>"; };
 		55BAE9471DF6C49100DBDCBA /* UserDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailInteractor.swift; path = Scenes/UserDetail/UserDetailInteractor.swift; sourceTree = "<group>"; };
 		55BAE9481DF6C49100DBDCBA /* UserDetailModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailModels.swift; path = Scenes/UserDetail/UserDetailModels.swift; sourceTree = "<group>"; };
@@ -192,12 +222,12 @@
 		5501FA6B1DF409F200E1E4F5 /* TestCaseOnIt */ = {
 			isa = PBXGroup;
 			children = (
+				55A96F161DF9678700F78FB9 /* CoreData */,
 				55BAE9541DF6C5FD00DBDCBA /* View */,
 				554CDDE01DF6098F00ABF87F /* Extension */,
 				5501FAB51DF42E3400E1E4F5 /* Model */,
 				5501FAAD1DF40B6E00E1E4F5 /* Supporting Files */,
 				5501FA9D1DF40AEF00E1E4F5 /* Scenes */,
-				5501FA731DF409F200E1E4F5 /* TestCaseOnIt.xcdatamodeld */,
 			);
 			path = TestCaseOnIt;
 			sourceTree = "<group>";
@@ -278,6 +308,29 @@
 				55BAE9831DF750C500DBDCBA /* UIImage.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		55A96F161DF9678700F78FB9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				55A96F171DF967E900F78FB9 /* _CDAddress.swift */,
+				55A96F181DF967E900F78FB9 /* _CDAlbum.swift */,
+				55A96F191DF967E900F78FB9 /* _CDCompany.swift */,
+				55A96F1A1DF967E900F78FB9 /* _CDGeoPosition.swift */,
+				55A96F1B1DF967E900F78FB9 /* _CDImage.swift */,
+				55A96F1C1DF967E900F78FB9 /* _CDToDo.swift */,
+				55A96F1D1DF967E900F78FB9 /* _CDUser.swift */,
+				55A96F1E1DF967E900F78FB9 /* CDAddress.swift */,
+				55A96F1F1DF967E900F78FB9 /* CDAlbum.swift */,
+				55A96F201DF967E900F78FB9 /* CDCompany.swift */,
+				55A96F211DF967E900F78FB9 /* CDGeoPosition.swift */,
+				55A96F221DF967E900F78FB9 /* CDImage.swift */,
+				55A96F231DF967E900F78FB9 /* CDToDo.swift */,
+				55A96F241DF967E900F78FB9 /* CDUser.swift */,
+				5501FA731DF409F200E1E4F5 /* TestCaseOnIt.xcdatamodeld */,
+				55A96F361DF9AE3F00F78FB9 /* CoreDataStack.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		55BAE9451DF6C46000DBDCBA /* UserDetail */ = {
@@ -546,6 +599,7 @@
 				55F6E1331DF4AF26003D70E8 /* ToDo.swift in Sources */,
 				55BAE9821DF7259500DBDCBA /* Image.swift in Sources */,
 				55F6E12F1DF4A08F003D70E8 /* ToDoRouter.swift in Sources */,
+				55A96F2B1DF967E900F78FB9 /* _CDUser.swift in Sources */,
 				55BAE97C1DF71AE600DBDCBA /* AlbumRouter.swift in Sources */,
 				5501FAA91DF40B3D00E1E4F5 /* ListUserPresenter.swift in Sources */,
 				5501FAA71DF40B3D00E1E4F5 /* ListUserInteractor.swift in Sources */,
@@ -553,33 +607,47 @@
 				55BAE9531DF6C49100DBDCBA /* UserDetailWorker.swift in Sources */,
 				55F6E12D1DF4A08F003D70E8 /* ToDoModels.swift in Sources */,
 				55BAE9501DF6C49100DBDCBA /* UserDetailPresenter.swift in Sources */,
+				55A96F2A1DF967E900F78FB9 /* _CDToDo.swift in Sources */,
 				55BAE97D1DF71AE600DBDCBA /* AlbumViewController.swift in Sources */,
 				55BAE9521DF6C49100DBDCBA /* UserDetailViewController.swift in Sources */,
+				55A96F311DF967E900F78FB9 /* CDToDo.swift in Sources */,
+				55A96F291DF967E900F78FB9 /* _CDImage.swift in Sources */,
 				55BAE9801DF7240500DBDCBA /* ImageCell.swift in Sources */,
 				5501FAAA1DF40B3D00E1E4F5 /* ListUserRouter.swift in Sources */,
 				5501FA6D1DF409F200E1E4F5 /* AppDelegate.swift in Sources */,
 				55BAE9791DF71AE600DBDCBA /* AlbumInteractor.swift in Sources */,
 				55BAE97A1DF71AE600DBDCBA /* AlbumModels.swift in Sources */,
+				55A96F251DF967E900F78FB9 /* _CDAddress.swift in Sources */,
 				55BAE9781DF71AE600DBDCBA /* AlbumConfigurator.swift in Sources */,
 				5501FA751DF409F200E1E4F5 /* TestCaseOnIt.xcdatamodeld in Sources */,
+				55A96F2C1DF967E900F78FB9 /* CDAddress.swift in Sources */,
+				55A96F271DF967E900F78FB9 /* _CDCompany.swift in Sources */,
 				55BAE97E1DF71AE600DBDCBA /* AlbumWorker.swift in Sources */,
 				5501FAAB1DF40B3D00E1E4F5 /* ListUserViewController.swift in Sources */,
 				55F6E12C1DF4A08F003D70E8 /* ToDoInteractor.swift in Sources */,
 				5501FAA81DF40B3D00E1E4F5 /* ListUserModels.swift in Sources */,
 				55BAE9591DF6CD3E00DBDCBA /* AlbumHeaderCell.swift in Sources */,
 				5501FAB41DF4180200E1E4F5 /* ListUserCell.swift in Sources */,
+				55A96F2E1DF967E900F78FB9 /* CDCompany.swift in Sources */,
 				5501FAA61DF40B3D00E1E4F5 /* ListUserConfigurator.swift in Sources */,
 				55BAE95F1DF6D52900DBDCBA /* Album.swift in Sources */,
 				55BAE9841DF750C500DBDCBA /* UIImage.swift in Sources */,
+				55A96F2D1DF967E900F78FB9 /* CDAlbum.swift in Sources */,
 				55BAE95D1DF6CE9200DBDCBA /* MapCell.swift in Sources */,
 				55F6E12B1DF4A08F003D70E8 /* ToDoConfigurator.swift in Sources */,
+				55A96F301DF967E900F78FB9 /* CDImage.swift in Sources */,
 				55BAE9511DF6C49100DBDCBA /* UserDetailRouter.swift in Sources */,
 				55BAE94D1DF6C49100DBDCBA /* UserDetailConfigurator.swift in Sources */,
 				55BAE9611DF6EA9E00DBDCBA /* AddressAnnotation.swift in Sources */,
+				55A96F2F1DF967E900F78FB9 /* CDGeoPosition.swift in Sources */,
 				55F6E1301DF4A08F003D70E8 /* ToDoViewController.swift in Sources */,
+				55A96F321DF967E900F78FB9 /* CDUser.swift in Sources */,
 				5501FAB71DF42E9600E1E4F5 /* User.swift in Sources */,
 				55F6E1351DF4B5A4003D70E8 /* ToDoCell.swift in Sources */,
+				55A96F281DF967E900F78FB9 /* _CDGeoPosition.swift in Sources */,
 				55BAE94F1DF6C49100DBDCBA /* UserDetailModels.swift in Sources */,
+				55A96F261DF967E900F78FB9 /* _CDAlbum.swift in Sources */,
+				55A96F371DF9AE3F00F78FB9 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

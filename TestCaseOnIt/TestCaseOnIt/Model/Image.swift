@@ -25,4 +25,18 @@ struct Image : JSONJoy {
     url = try decoder["url"].get()
     thumbnailUrl = try decoder["thumbnailUrl"].get()
   }
+  
+  init(_ cdImage: CDImage){
+    
+    if let album = cdImage.album {
+      albumId = Int(album.id!)
+      
+    }else{
+      albumId = 0
+    }
+    id = Int(cdImage.id!)
+    title = cdImage.title!
+    url = cdImage.url!
+    thumbnailUrl = cdImage.thumbnailUrl!
+  }
 }

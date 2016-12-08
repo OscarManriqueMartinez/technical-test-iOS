@@ -10,6 +10,8 @@
 import UIKit
 import Alamofire
 import JSONJoy
+import CoreData
+
 
 class ToDoWorker
 {
@@ -42,6 +44,64 @@ class ToDoWorker
           }
           success(toDos)
         }
+    }
+  }
+  
+  // MARK: - Core Data
+  
+  func saveToDos(_ toDos: [ToDo], user: User) {
+    let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+    
+    for toDo in toDos{
+      _ = CDToDo(toDo: toDo, user: user, insertInto: context)
+    }
+    
+    CoreDataStack.sharedInstance.saveContext()
+    
+  }
+  
+  func getToDosCoreData(user: User) -> [ToDo] {
+    
+    let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: CDToDo.entityName())
+    request.predicate = NSPredicate(format: "user.id == %d", user.id)
+    
+    var toDos = [ToDo]()
+    
+    do {
+      let results = try context.fetch(request)
+      
+      for task in results {
+        let cdTodo = task as! CDToDo
+        let toDo = ToDo(cdTodo)
+        toDos.append(toDo)
+      }
+      
+    } catch let error {
+      print(error.localizedDescription)
+    }
+    
+    return toDos
+  }
+  
+  func isToDosEmpty(user: User) -> Bool{
+    
+    let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: CDToDo.entityName())
+    request.predicate = NSPredicate(format: "user.id == %d", user.id)
+    
+    do {
+      let count = try context.count(for: request)
+      
+      if count > 0 {
+        return false
+        
+      }else{
+        return true
+      }
+    } catch let error {
+      print(error.localizedDescription)
+      return true
     }
   }
 }

@@ -23,4 +23,17 @@ struct Album : JSONJoy {
     id = try decoder["id"].get()
     title = try decoder["title"].get()
   }
+  
+  init(_ cdAlbum: CDAlbum){
+    
+    if let user = cdAlbum.user {
+      userId = Int(user.id!)
+      
+    }else{
+      userId = 0
+    }
+    id = Int(cdAlbum.id!)
+    title = cdAlbum.title!
+
+  }
 }

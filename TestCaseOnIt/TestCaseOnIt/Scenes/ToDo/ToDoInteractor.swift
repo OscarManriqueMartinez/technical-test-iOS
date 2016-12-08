@@ -39,16 +39,24 @@ class ToDoInteractor: ToDoInteractorInput
     switch type {
     case ToDoType.all:
       
-      worker.getToDos(user.id , success: { (toDos) in
+      if worker.isToDosEmpty(user: user){
         
-        self.toDos = toDos
-        let response = ToDosResponse(toDos:toDos)
-        self.output.presentToDos(response: response)
+        worker.getToDos(user.id , success: { (toDos) in
+          
+          self.worker.saveToDos(toDos, user: self.user)
+          self.sendToDos(toDos: toDos)
+          
+        }, failure: {(error) in
+          self.output.presentError(response: error)
+          
+        })
+      }else{
         
-      }, failure: {(error) in
-        self.output.presentError(response: error)
-        
-      })
+        let toDos = worker.getToDosCoreData(user:user)
+        if toDos.count > 0 {
+          sendToDos(toDos: toDos)
+        }
+      }
       
       break;
       
@@ -66,5 +74,12 @@ class ToDoInteractor: ToDoInteractorInput
       
       break;
     }
+  }
+  
+  func sendToDos(toDos: [ToDo]) {
+    self.toDos = toDos
+    let response = ToDosResponse(toDos:toDos)
+    self.output.presentToDos(response: response)
+    
   }
 }

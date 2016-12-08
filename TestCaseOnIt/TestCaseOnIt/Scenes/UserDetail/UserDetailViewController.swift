@@ -31,6 +31,7 @@ class UserDetailViewController: UIViewController, UserDetailViewControllerInput,
   @IBOutlet weak var toDosButton: UIButton!
   
   var userDetail: UserDetailViewModel?
+  var numSection = 0
   
   // MARK: - Object lifecycle
   
@@ -73,6 +74,7 @@ class UserDetailViewController: UIViewController, UserDetailViewControllerInput,
   func displayUserDetail(viewModel: UserDetailViewModel){
     
     userDetail = viewModel
+    numSection = 2
     tableView.reloadData()
   }
   
@@ -99,7 +101,7 @@ class UserDetailViewController: UIViewController, UserDetailViewControllerInput,
   }
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 2
+    return numSection
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

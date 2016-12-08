@@ -19,6 +19,7 @@ protocol ListUserViewControllerInput
 protocol ListUserViewControllerOutput
 {
   func loadUser()
+  func reloadUser()
   func searchUser(text: String)
   var users: [User] { get }
   var filteredUsers: [User] { get }
@@ -87,7 +88,7 @@ class ListUserViewController: UIViewController, ListUserViewControllerInput, UIS
   
   func refresh(_ sender:AnyObject) {
     // Code to refresh table view
-    loadUserOnLoad()
+    output.reloadUser()
   }
   
   

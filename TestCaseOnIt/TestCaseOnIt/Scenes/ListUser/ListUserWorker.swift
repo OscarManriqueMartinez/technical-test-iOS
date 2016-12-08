@@ -10,10 +10,11 @@
 import UIKit
 import Alamofire
 import JSONJoy
+import CoreData
 
 class ListUserWorker
 {
-  // MARK: - Business Logic
+  // MARK: - Web service
   
   func getUser(_ success: @escaping (_ users: [User]) -> Void, failure: @escaping (_ error: Error) -> Void)
   {
@@ -42,6 +43,61 @@ class ListUserWorker
           }
           success(users)
         }
+    }
+  }
+  
+  
+  // MARK: - Core Data
+  
+  func saveUsers(_ users: [User]) {
+    let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+    
+    for user in users{
+      _ = CDUser(user: user, insertInto: context)
+    }
+    
+    CoreDataStack.sharedInstance.saveContext()
+  }
+  
+  func getUserCoreData() -> [User] {
+    
+    let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: CDUser.entityName())
+    var users = [User]()
+    
+    do {
+      let results = try context.fetch(request)
+      
+      for task in results {
+        let cdUser = task as! CDUser
+        let user = User(cdUser)
+        users.append(user)
+      }
+    
+    } catch let error {
+      print(error.localizedDescription)
+    }
+    
+    return users
+  }
+  
+  func isUserEmpty() -> Bool{
+    
+    let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: CDUser.entityName())
+    
+    do {
+      let count = try context.count(for: request)
+      
+      if count > 0 {
+        return false
+        
+      }else{
+        return true
+      }
+    } catch let error {
+      print(error.localizedDescription)
+      return true
     }
   }
 }
