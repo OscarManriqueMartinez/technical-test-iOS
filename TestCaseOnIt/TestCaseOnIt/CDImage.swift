@@ -5,14 +5,14 @@ import CoreData
 open class CDImage: _CDImage {
 	// Custom logic goes here.
   
-  convenience init?(image: Image, insertInto context: NSManagedObjectContext){
+  convenience init?(image: Image, album: Album, insertInto context: NSManagedObjectContext){
     
     self.init(managedObjectContext: context)
     
-    self.albumId = NSNumber(value:image.albumId)
     self.id = NSNumber(value:image.id)
     self.title = image.title
     self.url = image.url
     self.thumbnailUrl = image.thumbnailUrl
+    self.album = CDAlbum(album: album, insertInto: context)
   }
 }

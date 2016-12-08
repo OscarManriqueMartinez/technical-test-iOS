@@ -23,7 +23,6 @@
         <attribute name="lng" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="CDImage" representedClassName="CDImage" syncable="YES">
-        <attribute name="albumId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="thumbnailUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -56,6 +55,6 @@
         <element name="CDCompany" positionX="-495" positionY="-565" width="128" height="88"/>
         <element name="CDToDo" positionX="-468" positionY="-172" width="128" height="28"/>
         <element name="CDAlbum" positionX="-72" positionY="-162" width="128" height="103"/>
-        <element name="CDImage" positionX="115" positionY="-178" width="128" height="133"/>
+        <element name="CDImage" positionX="115" positionY="-178" width="128" height="118"/>
     </elements>
 </model>

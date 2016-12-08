@@ -5,7 +5,6 @@ import Foundation
 import CoreData
 
 public enum CDImageAttributes: String {
-    case albumId = "albumId"
     case id = "id"
     case thumbnailUrl = "thumbnailUrl"
     case title = "title"
@@ -40,9 +39,6 @@ open class _CDImage: NSManagedObject {
     }
 
     // MARK: - Properties
-
-    @NSManaged open
-    var albumId: NSNumber?
 
     @NSManaged open
     var id: NSNumber?

@@ -34,15 +34,31 @@ class AlbumInteractor: AlbumInteractorInput
   func loadImage()
   {
     worker = AlbumWorker()
-    worker.getImages(album.id , success: { (images) in
+    
+    if worker.isImagesEmpty(album: album) {
       
-      self.images = images
-      let response = AlbumResponse(images:images)
-      self.output.presentImages(response: response)
+      worker.getImages(album.id , success: { (images) in
+        
+        self.worker.saveImages(images, album: self.album)
+        self.sendImage(images: images)
+        
+      }, failure: {(error) in
+        self.output.presentError(response: error)
+        
+      })
+    }else{
       
-    }, failure: {(error) in
-      self.output.presentError(response: error)
-      
-    })
+      let images = worker.getImagesCoreData(album: album)
+      if images.count > 0 {
+        sendImage(images: images)
+      }
+    }
+  }
+  
+  func sendImage(images: [Image]){
+    
+    self.images = images
+    let response = AlbumResponse(images:images)
+    self.output.presentImages(response: response)
   }
 }
