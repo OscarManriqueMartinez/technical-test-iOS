@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CDAddress" representedClassName="" syncable="YES">
+    <entity name="CDAddress" representedClassName="CDAddress" syncable="YES">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="suite" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="geo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDGeoPosition" syncable="YES"/>
     </entity>
-    <entity name="CDAlbum" representedClassName="" syncable="YES">
+    <entity name="CDAlbum" representedClassName="CDAlbum" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDImage" inverseName="album" inverseEntity="CDImage" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="albums" inverseEntity="CDUser" syncable="YES"/>
     </entity>
-    <entity name="CDCompany" representedClassName="" syncable="YES">
+    <entity name="CDCompany" representedClassName="CDCompany" syncable="YES">
         <attribute name="bs" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="catchPhrase" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="CDGeoPosition" representedClassName="" syncable="YES">
+    <entity name="CDGeoPosition" representedClassName="CDGeoPosition" syncable="YES">
         <attribute name="lat" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lng" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="CDImage" representedClassName="" syncable="YES">
+    <entity name="CDImage" representedClassName="CDImage" syncable="YES">
         <attribute name="albumId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="thumbnailUrl" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,14 +31,14 @@
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDAlbum" inverseName="images" inverseEntity="CDAlbum" syncable="YES"/>
     </entity>
-    <entity name="CDToDo" representedClassName="" syncable="YES">
+    <entity name="CDToDo" representedClassName="CDToDo" syncable="YES">
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="todos" inverseEntity="CDUser" syncable="YES"/>
     </entity>
-    <entity name="CDUser" representedClassName="" syncable="YES">
+    <entity name="CDUser" representedClassName="CDUser" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -49,9 +49,13 @@
         <relationship name="albums" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDAlbum" inverseName="user" inverseEntity="CDAlbum" syncable="YES"/>
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CDCompany" syncable="YES"/>
         <relationship name="todos" toMany="YES" deletionRule="Cascade" destinationEntity="CDToDo" inverseName="user" inverseEntity="CDToDo" syncable="YES"/>
+        <fetchedProperty name="allUser" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="CDUser"/>
+        </fetchedProperty>
     </entity>
+    <fetchRequest name="AllUsers" entity="CDUser" predicateString="TRUEPREDICATE"/>
     <elements>
-        <element name="CDUser" positionX="-261" positionY="-432" width="128" height="193"/>
+        <element name="CDUser" positionX="-261" positionY="-432" width="128" height="221"/>
         <element name="CDAddress" positionX="-110" positionY="-558" width="128" height="118"/>
         <element name="CDGeoPosition" positionX="79" positionY="-505" width="128" height="73"/>
         <element name="CDCompany" positionX="-495" positionY="-565" width="128" height="88"/>

@@ -40,6 +40,7 @@
 		55A96F301DF967E900F78FB9 /* CDImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F221DF967E900F78FB9 /* CDImage.swift */; };
 		55A96F311DF967E900F78FB9 /* CDToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F231DF967E900F78FB9 /* CDToDo.swift */; };
 		55A96F321DF967E900F78FB9 /* CDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F241DF967E900F78FB9 /* CDUser.swift */; };
+		55A96F371DF9AE3F00F78FB9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A96F361DF9AE3F00F78FB9 /* CoreDataStack.swift */; };
 		55BAE94D1DF6C49100DBDCBA /* UserDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9461DF6C49100DBDCBA /* UserDetailConfigurator.swift */; };
 		55BAE94E1DF6C49100DBDCBA /* UserDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9471DF6C49100DBDCBA /* UserDetailInteractor.swift */; };
 		55BAE94F1DF6C49100DBDCBA /* UserDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BAE9481DF6C49100DBDCBA /* UserDetailModels.swift */; };
@@ -132,6 +133,7 @@
 		55A96F221DF967E900F78FB9 /* CDImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDImage.swift; sourceTree = "<group>"; };
 		55A96F231DF967E900F78FB9 /* CDToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDToDo.swift; sourceTree = "<group>"; };
 		55A96F241DF967E900F78FB9 /* CDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDUser.swift; sourceTree = "<group>"; };
+		55A96F361DF9AE3F00F78FB9 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		55BAE9461DF6C49100DBDCBA /* UserDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailConfigurator.swift; path = Scenes/UserDetail/UserDetailConfigurator.swift; sourceTree = "<group>"; };
 		55BAE9471DF6C49100DBDCBA /* UserDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailInteractor.swift; path = Scenes/UserDetail/UserDetailInteractor.swift; sourceTree = "<group>"; };
 		55BAE9481DF6C49100DBDCBA /* UserDetailModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailModels.swift; path = Scenes/UserDetail/UserDetailModels.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				55A96F231DF967E900F78FB9 /* CDToDo.swift */,
 				55A96F241DF967E900F78FB9 /* CDUser.swift */,
 				5501FA731DF409F200E1E4F5 /* TestCaseOnIt.xcdatamodeld */,
+				55A96F361DF9AE3F00F78FB9 /* CoreDataStack.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				55A96F281DF967E900F78FB9 /* _CDGeoPosition.swift in Sources */,
 				55BAE94F1DF6C49100DBDCBA /* UserDetailModels.swift in Sources */,
 				55A96F261DF967E900F78FB9 /* _CDAlbum.swift in Sources */,
+				55A96F371DF9AE3F00F78FB9 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

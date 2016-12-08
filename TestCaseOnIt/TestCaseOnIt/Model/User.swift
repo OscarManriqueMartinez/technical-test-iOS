@@ -34,6 +34,18 @@ struct User : JSONJoy {
     website = try decoder["website"].get()
   }
 	
+  init(_ cdUser: CDUser){
+    
+    email = cdUser.email!
+    id = Int(cdUser.id!)
+    name = cdUser.name!
+    phone = cdUser.phone!
+    username = cdUser.username!
+    website = cdUser.website!
+    
+    company = Company(cdUser.company!)
+    address = Address(cdUser.address!)
+  }
   
 }
 
@@ -51,6 +63,16 @@ struct Address : JSONJoy {
     suite = try decoder["suite"].get()
     zipcode = try decoder["zipcode"].get()
   }
+  
+  init(_ address: CDAddress){
+    
+    city = address.city!
+    street = address.street!
+    zipcode = address.zipcode!
+    suite = address.suite!
+    geo = GeoPosition(address.geo!)
+  }
+  
 }
 
 struct GeoPosition : JSONJoy {
@@ -60,6 +82,12 @@ struct GeoPosition : JSONJoy {
   init(_ decoder: JSONDecoder) throws {
     lat = try decoder["lat"].get()
     lng = try decoder["lng"].get()
+  }
+  
+  init(_ geo: CDGeoPosition){
+    
+    lat = geo.lat!
+    lng = geo.lng!
   }
 }
 
@@ -72,5 +100,12 @@ struct Company : JSONJoy {
     bs = try decoder["bs"].get()
     catchPhrase = try decoder["catchPhrase"].get()
     name = try decoder["catchPhrase"].get()
+  }
+  
+  init(_ company: CDCompany){
+    
+    bs = company.bs!
+    catchPhrase = company.catchPhrase!
+    name = company.name!
   }
 }

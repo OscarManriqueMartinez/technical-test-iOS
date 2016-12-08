@@ -12,6 +12,7 @@ import UIKit
 protocol ListUserInteractorInput
 {
   func loadUser()
+  func reloadUser()
   func searchUser(text: String)
   var users: [User] { get }
   var filteredUsers: [User] { get }
@@ -37,16 +38,22 @@ class ListUserInteractor: ListUserInteractorInput
     // NOTE: Create some Worker to do the work
     
     worker = ListUserWorker()
-    worker.getUser({ (users) in
+    
+    if worker.isUserEmpty() {
+      loadUserServer()
       
-      self.users = users
-      let response = UserListResponse(users:users, isFilter:false)
-      self.output.presentListUser(response: response)
-      
-    }, failure: {(error) in
-      self.output.presentError(response: error)
-      
-    })
+    }else{
+      let users = worker.getUserCoreData()
+      if users.count > 0 {
+        sendUser(users: users)
+      }
+    }
+  }
+  
+  func reloadUser() {
+    
+    CoreDataStack.sharedInstance.deleteCoreData()
+    loadUserServer()
   }
   
   func searchUser(text: String){
@@ -58,5 +65,24 @@ class ListUserInteractor: ListUserInteractorInput
     let response = UserListResponse(users:filteredUsers, isFilter:true)
     self.output.presentListUser(response: response)
   }
+  
+  func sendUser(users: [User]) {
+    self.users = users
+    let response = UserListResponse(users:users, isFilter:false)
+    self.output.presentListUser(response: response)
+  }
 
+  func loadUserServer() {
+    
+    worker = ListUserWorker()
+    worker.getUser({ (users) in
+      
+      self.worker.saveUsers(users)
+      self.sendUser(users: users)
+      
+    }, failure: {(error) in
+      self.output.presentError(response: error)
+      
+    })
+  }
 }
